@@ -3,11 +3,11 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <nav className="sticky top-0 left-0 right-0 flex items-center justify-between py-8 lg:px-32 xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem] 3xl:px-0">
-      <h2 className="text-2xl font-semibold lg:text-3xl 2xl:text-4xl">
+      <h2 className="font-semibold lg:text-2xl xl:text-3xl 2xl:text-4xl">
         Shravan Samsi
       </h2>
 
-      <div className="flex gap-4 text-lg font-light lg:gap-6 2xl:gap-8 2xl:text-2xl">
+      <div className="flex gap-4 font-light lg:gap-6 lg:text-base xl:text-lg 2xl:gap-8 2xl:text-2xl">
         <Link href="/">
           <a>Home</a>
         </Link>
