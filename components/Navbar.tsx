@@ -2,10 +2,12 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="fixed top-0 left-0 right-0 flex items-center justify-between px-[20rem] py-8">
-      <h2 className="text-4xl font-semibold">Shravan Samsi</h2>
+    <nav className="fixed top-0 left-0 right-0 flex items-center justify-between px-32 py-8 xl:px-56 2xl:px-80">
+      <h2 className="text-2xl font-semibold lg:text-3xl 2xl:text-4xl">
+        Shravan Samsi
+      </h2>
 
-      <div className="flex gap-8 text-xl">
+      <div className="flex gap-4 text-lg font-light lg:gap-6 2xl:gap-8 2xl:text-2xl">
         <Link href="/">
           <a>Home</a>
         </Link>
