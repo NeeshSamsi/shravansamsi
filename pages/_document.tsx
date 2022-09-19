@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from "next/document"
 
 export default function Document() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
         <meta charSet="UTF-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -17,7 +17,7 @@ export default function Document() {
         />
       </Head>
 
-      <body>
+      <body className="bg-dark text-light font-sans">
         <Main />
         <NextScript />
       </body>
