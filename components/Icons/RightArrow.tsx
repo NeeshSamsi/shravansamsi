@@ -1,9 +1,9 @@
-export default function RightArrow({ size }: { size: number }) {
+export default function RightArrow() {
   return (
     <svg
-      width={`${size}rem`}
-      height={`${size}rem`}
-      viewBox={`0 0 ${size * 16} ${size * 16}`}
+      width="100%"
+      height="100%"
+      viewBox="0 0 32 32"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
     >
