@@ -11,7 +11,7 @@ const Home: NextPage = () => {
       </Head>
 
       <main>
-        <h1>Welcome to Shravan Samsi</h1>
+        <h1 className="text-3xl text-center font-bold text-gray-800">Welcome to Shravan Samsi</h1>
       </main>
 
       <footer></footer>
