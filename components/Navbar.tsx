@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function Navbar() {
   return (
-    <nav className="flex items-center justify-between px-[20rem] py-8">
+    <nav className="fixed top-0 left-0 right-0 flex items-center justify-between px-[20rem] py-8">
       <h2 className="text-4xl font-semibold">Shravan Samsi</h2>
 
       <div className="flex gap-8 text-xl">
