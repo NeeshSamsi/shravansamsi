@@ -21,7 +21,7 @@ export default function Button({ type, text, icon }: ButtonProps) {
       `}
     >
       <div>{text}</div>
-      <div className="h-8 2xl:h-10">{icon}</div>
+      <div className="lg:h-6 xl:h-8  2xl:h-10">{icon}</div>
     </button>
   );
 }

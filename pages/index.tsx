@@ -22,19 +22,19 @@ const Home: NextPage = () => {
 
       <Navbar />
 
-      <main className="mx-auto flex h-screen flex-col justify-center px-44 2xl:px-56 3xl:max-w-[144rem] 3xl:px-0">
+      <main className="mx-auto flex h-screen flex-col justify-center lg:px-32 xl:px-44 2xl:px-56 3xl:max-w-[144rem] 3xl:px-0">
         <div className="flex items-center justify-between gap-6">
           <div className="py-auto w-2/5">
-            <h1 className="font-smallcaps mb-4 font-serif font-bold xl:text-6xl 2xl:text-7xl 3xl:text-8xl">
+            <h1 className="font-smallcaps mb-4 font-serif font-bold lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl">
               Massive Tagline of Some Sort
             </h1>
-            <p className="mb-6 xl:text-xl 2xl:text-2xl 3xl:text-3xl">
+            <p className="mb-6 lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
               Subheading / para - Lorem ipsum dolor sit amet consectetur
               adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
               Pellentesque sit amet sapien.
             </p>
 
-            <div className="mb-6 flex text-base xl:gap-6 2xl:gap-10 2xl:text-xl 3xl:text-2xl">
+            <div className="mb-6 flex text-base lg:gap-2 lg:text-sm xl:gap-6 2xl:gap-10 2xl:text-xl 3xl:text-2xl">
               <Button
                 type={ButtonTypes.Primary}
                 text="Catch me live"
@@ -52,7 +52,7 @@ const Home: NextPage = () => {
                 href="https://youtube.com/shravansamsi"
                 className="transition-all hover:text-accent"
               >
-                <div className="xl:h-14 2xl:h-16">
+                <div className="lg:h-12 xl:h-14 2xl:h-16">
                   <YouTube size={4} />
                 </div>
               </a>
@@ -60,7 +60,7 @@ const Home: NextPage = () => {
                 href="https://www.instagram.com/shravansamsi/"
                 className="transition-all hover:text-accent"
               >
-                <div className="xl:h-14 2xl:h-16">
+                <div className="lg:h-12 xl:h-14 2xl:h-16">
                   <Instagram />
                 </div>
               </a>
@@ -68,7 +68,7 @@ const Home: NextPage = () => {
                 href="https://www.facebook.com/shravansamsiofficial/"
                 className="transition-all hover:text-accent"
               >
-                <div className="xl:h-14 2xl:h-16">
+                <div className="lg:h-12 xl:h-14 2xl:h-16">
                   <Facebook />
                 </div>
               </a>
