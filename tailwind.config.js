@@ -8,6 +8,10 @@ module.exports = {
         dark: "#22201C",
         accent: "#FFBA25",
       },
+      fontFamily: {
+        sans: "Poppins",
+        serif: "Noto Serif",
+      },
     },
   },
   plugins: [],
