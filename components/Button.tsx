@@ -20,8 +20,8 @@ export default function Button({ type, text, icon }: ButtonProps) {
       }
       `}
     >
-      <span>{text}</span>
-      {icon}
+      <div>{text}</div>
+      <div className="h-8 2xl:h-10">{icon}</div>
     </button>
   );
 }

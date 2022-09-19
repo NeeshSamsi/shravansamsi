@@ -22,28 +22,28 @@ const Home: NextPage = () => {
 
       <Navbar />
 
-      <main className="flex h-screen flex-col justify-center px-[20rem]">
+      <main className="mx-auto flex h-screen flex-col justify-center px-44 2xl:px-56 3xl:max-w-[144rem] 3xl:px-0">
         <div className="flex items-center justify-between gap-6">
           <div className="py-auto w-2/5">
-            <h1 className="mb-8 font-serif text-8xl">
+            <h1 className="font-smallcaps mb-4 font-serif font-bold xl:text-6xl 2xl:text-7xl 3xl:text-8xl">
               Massive Tagline of Some Sort
             </h1>
-            <p className="mb-10 text-3xl">
+            <p className="mb-6 xl:text-xl 2xl:text-2xl 3xl:text-3xl">
               Subheading / para - Lorem ipsum dolor sit amet consectetur
               adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
               Pellentesque sit amet sapien.
             </p>
 
-            <div className="mb-10 flex gap-10">
+            <div className="mb-6 flex text-base xl:gap-6 2xl:gap-10 2xl:text-xl 3xl:text-2xl">
               <Button
                 type={ButtonTypes.Primary}
                 text="Catch me live"
-                icon={<RightArrow size={2} />}
+                icon={<RightArrow />}
               />
               <Button
                 type={ButtonTypes.Secondary}
                 text="Let's chat"
-                icon={<Chat size={2} />}
+                icon={<Chat />}
               />
             </div>
 
@@ -52,24 +52,30 @@ const Home: NextPage = () => {
                 href="https://youtube.com/shravansamsi"
                 className="transition-all hover:text-accent"
               >
-                <YouTube size={4} />
+                <div className="xl:h-14 2xl:h-16">
+                  <YouTube size={4} />
+                </div>
               </a>
               <a
                 href="https://www.instagram.com/shravansamsi/"
                 className="transition-all hover:text-accent"
               >
-                <Instagram size={4} />
+                <div className="xl:h-14 2xl:h-16">
+                  <Instagram />
+                </div>
               </a>
               <a
                 href="https://www.facebook.com/shravansamsiofficial/"
                 className="transition-all hover:text-accent"
               >
-                <Facebook size={4} />
+                <div className="xl:h-14 2xl:h-16">
+                  <Facebook />
+                </div>
               </a>
             </div>
           </div>
 
-          <div className="relative aspect-square w-1/2 rounded-full bg-light 2xl:w-3/5">
+          <div className="3xl:2/5 relative aspect-square w-1/2 rounded-full bg-light 2xl:w-1/2">
             <Image
               className="h-full w-full"
               src="/hero-image.png"
