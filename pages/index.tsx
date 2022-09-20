@@ -11,6 +11,7 @@ import {
   Facebook,
 } from "../components/Icons";
 import Image from "next/image";
+import Link from "next/link";
 
 const Home: NextPage = () => {
   return (
@@ -22,45 +23,53 @@ const Home: NextPage = () => {
 
       <Navbar />
 
-      <main className="mx-auto flex h-screen flex-col justify-center lg:px-32 xl:px-44 2xl:px-56 3xl:max-w-[144rem] 3xl:px-0">
-        <div className="flex items-center justify-between gap-6">
-          <div className="py-auto w-2/5">
-            <h1 className="font-smallcaps mb-4 font-serif font-bold lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl">
+      <main className="flex h-screen flex-col px-4 text-center sm:px-8 md:px-12 lg:justify-center lg:px-32 lg:text-left xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem] 3xl:px-0">
+        <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:items-center lg:justify-between">
+          <div className="py-auto w-auto lg:w-2/5">
+            <h1 className="font-smallcaps mb-4 font-serif text-4xl font-bold md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl">
               Massive Tagline of Some Sort
             </h1>
-            <p className="mb-6 lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
+            <p className="mb-6 text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
               Subheading / para - Lorem ipsum dolor sit amet consectetur
               adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
               Pellentesque sit amet sapien.
             </p>
 
-            <div className="mb-6 flex text-base lg:gap-2 lg:text-sm xl:gap-6 2xl:gap-10 2xl:text-xl 3xl:text-2xl">
-              <Button
-                type={ButtonTypes.Primary}
-                text="Catch me live"
-                icon={<RightArrow />}
-              />
-              <Button
-                type={ButtonTypes.Secondary}
-                text="Let's chat"
-                icon={<Chat />}
-              />
+            <div className="mb-6 flex items-center justify-center gap-4 text-xs sm:text-sm md:gap-6 lg:justify-start lg:gap-2 lg:text-base xl:gap-6 2xl:gap-10 2xl:text-xl 3xl:text-2xl">
+              <Link href="/events">
+                <a>
+                  <Button
+                    type={ButtonTypes.Primary}
+                    text="Catch me live"
+                    icon={<RightArrow />}
+                  />
+                </a>
+              </Link>
+              <Link href="/contact">
+                <a>
+                  <Button
+                    type={ButtonTypes.Secondary}
+                    text="Let's chat"
+                    icon={<Chat />}
+                  />
+                </a>
+              </Link>
             </div>
 
-            <div className="flex gap-8">
+            <div className="flex justify-center gap-2 lg:justify-start lg:gap-8">
               <a
                 href="https://youtube.com/shravansamsi"
                 className="transition-all hover:text-accent"
               >
-                <div className="lg:h-12 xl:h-14 2xl:h-16">
-                  <YouTube size={4} />
+                <div className="h-10 sm:h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-16">
+                  <YouTube />
                 </div>
               </a>
               <a
                 href="https://www.instagram.com/shravansamsi/"
                 className="transition-all hover:text-accent"
               >
-                <div className="lg:h-12 xl:h-14 2xl:h-16">
+                <div className="h-10 sm:h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-16">
                   <Instagram />
                 </div>
               </a>
@@ -68,14 +77,14 @@ const Home: NextPage = () => {
                 href="https://www.facebook.com/shravansamsiofficial/"
                 className="transition-all hover:text-accent"
               >
-                <div className="lg:h-12 xl:h-14 2xl:h-16">
+                <div className="h-10 sm:h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-16">
                   <Facebook />
                 </div>
               </a>
             </div>
           </div>
 
-          <div className="3xl:2/5 relative -z-10 aspect-square w-1/2 rounded-full bg-light lg:block 2xl:w-1/2">
+          <div className="3xl:2/5 relative -z-10 aspect-square w-full rounded-full bg-light sm:w-3/4 lg:block lg:w-1/2 2xl:w-1/2">
             <Image
               className="h-full w-full"
               src="/hero-image.png"
