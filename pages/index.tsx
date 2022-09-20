@@ -75,7 +75,7 @@ const Home: NextPage = () => {
             </div>
           </div>
 
-          <div className="3xl:2/5 relative aspect-square w-1/2 rounded-full bg-light 2xl:w-1/2">
+          <div className="3xl:2/5 relative -z-10 aspect-square w-1/2 rounded-full bg-light lg:block 2xl:w-1/2">
             <Image
               className="h-full w-full"
               src="/hero-image.png"
