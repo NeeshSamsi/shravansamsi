@@ -12,8 +12,8 @@ export default function Clock() {
         fill="currentColor"
       />
       <path
-        fill-rule="evenodd"
-        clip-rule="evenodd"
+        fillRule="evenodd"
+        clipRule="evenodd"
         d="M16 6C10.4772 6 6 10.4772 6 16C6 21.5228 10.4772 26 16 26C21.5228 26 26 21.5228 26 16C26 10.4772 21.5228 6 16 6ZM7.71429 16C7.71429 11.4239 11.4239 7.71429 16 7.71429C20.5761 7.71429 24.2857 11.4239 24.2857 16C24.2857 20.5761 20.5761 24.2857 16 24.2857C11.4239 24.2857 7.71429 20.5761 7.71429 16Z"
         fill="currentColor"
       />
