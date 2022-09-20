@@ -1,4 +1,5 @@
 import { NextPage } from "next";
+import Head from "next/head";
 import Image from "next/image";
 import Button, { ButtonTypes } from "../components/Button";
 import Footer from "../components/Footer";
@@ -8,6 +9,11 @@ import Navbar from "../components/Navbar";
 const About: NextPage = () => {
   return (
     <>
+      <Head>
+        <title>About - Shravan Samsi</title>
+        <meta name="description" content="" />
+      </Head>
+
       <Navbar />
 
       <main className="px-4 pt-16 pb-24 sm:px-8 md:px-12 lg:px-32 xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem] 3xl:px-0">
