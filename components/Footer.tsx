@@ -57,7 +57,7 @@ export default function Footer() {
         </div>
       </div>
 
-      <div className="flex flex-col gap-6 text-xl text-center md:text-lg xl:text-2xl ">
+      <div className="flex flex-col gap-6 text-center text-xl md:text-lg xl:text-2xl ">
         <Link href="/">
           <a className="block transition-all hover:text-accent">Home</a>
         </Link>
