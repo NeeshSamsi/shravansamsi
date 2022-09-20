@@ -79,7 +79,7 @@ export default function Navbar() {
               className="transition-all hover:text-accent"
             >
               <div className="h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-16">
-                <YouTube size={4} />
+                <YouTube />
               </div>
             </a>
             <a
