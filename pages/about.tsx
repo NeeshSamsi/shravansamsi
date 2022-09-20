@@ -19,7 +19,7 @@ const About: NextPage = () => {
       <main className="px-4 pt-16 pb-24 sm:px-8 md:px-12 lg:px-32 xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem] 3xl:px-0">
         <div className="flex flex-col gap-10 md:flex-row md:justify-between md:gap-0">
           <div className="flex w-full flex-col gap-12 md:w-2/5 xl:gap-16">
-            <h1 className="font-smallcaps rounded-lg bg-accent py-8 text-center font-serif text-6xl font-bold text-dark xl:text-8xl">
+            <h1 className="font-smallcaps rounded-lg bg-accent py-8 text-center font-serif text-6xl font-bold text-dark xl:text-9xl">
               About
             </h1>
 
@@ -59,10 +59,10 @@ const About: NextPage = () => {
               venenatis sed nibh.
             </p>
 
-            <a href="https://shravansamsi.com/" className="text-lg lg:text-xl">
+            <a href="https://shravansamsi.com/" className="text-xl lg:text-2xl">
               <Button
                 type={ButtonTypes.Primary}
-                text="Download Full Bio"
+                text="Download full Bio"
                 icon={<Download />}
               />
             </a>

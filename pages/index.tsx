@@ -35,7 +35,7 @@ const Home: NextPage = () => {
               Pellentesque sit amet sapien.
             </p>
 
-            <div className="mb-6 flex items-center justify-center gap-4 text-xs sm:text-sm md:gap-6 lg:justify-start lg:gap-2 lg:text-base xl:gap-6 2xl:gap-10 2xl:text-xl 3xl:text-2xl">
+            <div className="mb-6 flex items-center justify-center gap-4 text-sm sm:text-base md:gap-6 lg:justify-start lg:gap-2 lg:text-lg xl:gap-6 2xl:gap-10 2xl:text-2xl 3xl:text-3xl">
               <Link href="/events">
                 <a>
                   <Button
