@@ -1,4 +1,4 @@
-export default function YouTube({ size }: { size: number }) {
+export default function YouTube() {
   return (
     <svg
       width="100%"
