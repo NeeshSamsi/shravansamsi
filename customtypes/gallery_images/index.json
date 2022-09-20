@@ -1,0 +1,34 @@
+{
+  "id": "gallery_images",
+  "label": "Gallery Images",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "image": {
+        "type": "Image",
+        "config": {
+          "label": "Image",
+          "constraint": {},
+          "thumbnails": []
+        }
+      },
+      "dimensions": {
+        "type": "Text",
+        "config": {
+          "label": "Dimensions",
+          "placeholder": ""
+        }
+      },
+      "slideshow": {
+        "type": "Boolean",
+        "config": {
+          "label": "Main Slideshow",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      }
+    }
+  }
+}
