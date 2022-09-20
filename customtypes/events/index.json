@@ -1,0 +1,74 @@
+{
+  "id": "events",
+  "label": "Events",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "name": {
+        "type": "Text",
+        "config": {
+          "label": "Name of Event",
+          "placeholder": ""
+        }
+      },
+      "location": {
+        "type": "Group",
+        "config": {
+          "label": "Location of Event",
+          "fields": {
+            "location_name": {
+              "type": "Text",
+              "config": {
+                "label": "Name of Location",
+                "placeholder": ""
+              }
+            },
+            "location_link": {
+              "type": "Link",
+              "config": {
+                "label": "Link to Location",
+                "placeholder": "",
+                "allowTargetBlank": true,
+                "select": null
+              }
+            }
+          }
+        }
+      },
+      "time": {
+        "type": "Text",
+        "config": {
+          "label": "Time of Event",
+          "placeholder": ""
+        }
+      },
+      "paid": {
+        "type": "Boolean",
+        "config": {
+          "label": "Paid Event",
+          "default_value": false,
+          "placeholder_true": "true",
+          "placeholder_false": "false"
+        }
+      },
+      "ticket_link": {
+        "type": "Link",
+        "config": {
+          "label": "Link to Tickets",
+          "placeholder": "",
+          "allowTargetBlank": false,
+          "select": null
+        }
+      },
+      "poster": {
+        "type": "Image",
+        "config": {
+          "label": "Poster",
+          "constraint": {},
+          "thumbnails": []
+        }
+      }
+    }
+  }
+}

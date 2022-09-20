@@ -1,0 +1,14 @@
+{
+  "_cts": {
+    "events": {
+      "name": {
+        "content": "International Jazz Day"
+      },
+      "location": {}
+    },
+    "gallery_images": {}
+  },
+  "slices": {
+    "Event": {}
+  }
+}
