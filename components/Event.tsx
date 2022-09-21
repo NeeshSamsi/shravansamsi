@@ -8,7 +8,7 @@ import Location from "./Icons/Location";
 const Event: NextPage = () => {
   return (
     <div className="flex gap-8">
-      <div className="relative -z-10 aspect-square w-64 bg-light lg:block">
+      <div className="relative -z-10 aspect-square w-72 bg-light lg:block">
         <Image
           className="h-full w-full"
           src="/hero-image.png"
@@ -19,12 +19,14 @@ const Event: NextPage = () => {
       <div className="flex flex-col justify-between">
         <div className="flex flex-col gap-4">
           <h4 className="text-4xl font-semibold">Name of Event</h4>
-          <div className="flex items-center gap-2">
-            <div className="h-8">
-              <Location />
+          <a href="">
+            <div className="flex cursor-pointer items-center gap-2 transition-all hover:text-accent">
+              <div className="h-8 ">
+                <Location />
+              </div>
+              <p className="text-xl hover:underline">Bluebop Cafe, Mumbai</p>
             </div>
-            <p className="text-xl">Bluebop Cafe, Mumbai</p>
-          </div>
+          </a>
           <div className="flex items-center gap-2">
             <div className="h-8">
               <Clock />
@@ -32,7 +34,7 @@ const Event: NextPage = () => {
             <p className="text-xl">7:00 pm onwards</p>
           </div>
         </div>
-        <a href="https://bookmyshow.com" className="text-lg">
+        <a href="https://bookmyshow.com" className="text-xl">
           <Button
             type={ButtonTypes.Secondary}
             text="Book tickets"
