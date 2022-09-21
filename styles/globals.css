@@ -5,7 +5,3 @@
 .font-smallcaps {
   font-variant: small-caps;
 }
-
-.grid-cols-events {
-  grid-template-columns: auto max-content;
-}
