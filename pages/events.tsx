@@ -19,7 +19,7 @@ const Events: NextPage = () => {
           Events
         </h1>
 
-        <div className="grid-cols-events grid gap-16">
+        <div className="grid grid-cols-1 gap-10 md:gap-16 2xl:grid-cols-2">
           <Event />
           <Event />
           <Event />
