@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@headlessui/react": "^1.7.2",
+    "@headlessui/tailwindcss": "^0.1.1",
     "@prismicio/client": "^6.7.1",
     "@prismicio/helpers": "^2.3.4",
     "@prismicio/react": "^2.5.0",
