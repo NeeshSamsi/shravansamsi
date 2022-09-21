@@ -12,7 +12,7 @@ export enum ButtonTypes {
 export default function Button({ type, text, icon }: ButtonProps) {
   return (
     <button
-      className={`flex items-center gap-2 self-center rounded px-3 py-2 font-serif font-bold tracking-wider transition-all md:gap-4 md:self-start
+      className={`flex items-center gap-2 self-center rounded py-1 px-2 font-serif font-bold tracking-wider transition-all sm:px-3 sm:py-2 md:gap-4 md:self-start
       ${type === ButtonTypes.Primary && `bg-accent text-dark hover:bg-light`}
       ${
         type === ButtonTypes.Secondary &&
