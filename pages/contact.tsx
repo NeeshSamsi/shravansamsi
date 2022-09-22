@@ -2,6 +2,9 @@ import { NextPage } from "next";
 import { useState, MouseEvent } from "react";
 import Head from "next/head";
 import Image from "next/Image";
+
+import { useFormspark } from "@formspark/use-formspark";
+
 import { Listbox } from "@headlessui/react";
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
@@ -10,6 +13,12 @@ import Caret from "../components/Icons/Caret";
 import Send from "../components/Icons/Send";
 
 const Contact: NextPage = () => {
+  let [submit, submitting] = useFormspark({
+    formId: "ikSfEvMG",
+  });
+
+  const [sent, setSent] = useState(false);
+
   const options = [
     { id: 1, name: "I just want to get in touch" },
     { id: 2, name: "I want to take lessons" },
@@ -24,22 +33,27 @@ const Contact: NextPage = () => {
   const handleFormSubmit = async (e: MouseEvent<HTMLButtonElement>) => {
     e.preventDefault();
 
-    // const response = await fetch(
-    //   "https://mailthis.to/avaneeshsamsi@gmail.com",
-    //   {
-    //     method: "POST",
-    //     body: {
-    //       name,
-    //       email,
-    //       topic: selectedTopic,
-    //       message,
-    //       _subject: `Website form submission - ${name} - ${selectedTopic}`,
-    //       _replyto: email,
-    //     },
-    //   }
-    // );
+    setName("");
+    setEmail("");
+    setSelectedTopic(options[0]);
+    setMessage("");
 
-    // console.log("Submitted:", response);
+    await submit({
+      topic: selectedTopic.name,
+      name,
+      email,
+      message,
+      _email: {
+        subject: `Contact Form submission - ${name} - ${selectedTopic.name}`,
+        from: email,
+      },
+    });
+
+    setSent(true);
+
+    setTimeout(() => {
+      setSent(false);
+    }, 10000);
   };
 
   return (
@@ -70,6 +84,7 @@ const Contact: NextPage = () => {
                   type="text"
                   className="rounded border border-light bg-dark py-3 px-4 text-base ring-light transition-all placeholder:font-extralight placeholder:text-light hover:bg-dark-off focus:ring-2 md:text-lg xl:text-2xl"
                   id="name"
+                  name="name"
                   placeholder="Enter your name here"
                   value={name}
                   onChange={(e) => {
@@ -89,6 +104,7 @@ const Contact: NextPage = () => {
                   type="email"
                   className="rounded border border-light bg-dark py-3 px-4 text-base ring-light transition-all placeholder:font-extralight placeholder:text-light hover:bg-dark-off focus:ring-2 md:text-lg xl:text-2xl"
                   id="email"
+                  name="email"
                   placeholder="Enter your email address"
                   value={email}
                   onChange={(e) => {
@@ -102,7 +118,11 @@ const Contact: NextPage = () => {
                   What&apos;s up?
                 </label>
 
-                <Listbox value={selectedTopic} onChange={setSelectedTopic}>
+                <Listbox
+                  value={selectedTopic}
+                  onChange={setSelectedTopic}
+                  name="topic"
+                >
                   <Listbox.Button className="ietms-center flex justify-between rounded border border-light py-3 px-4 text-left text-base font-extralight text-light hover:bg-dark-off md:text-lg xl:text-2xl">
                     <span>{selectedTopic.name}</span>
                     <span className="w-8 rotate-90 transition-all ui-open:-rotate-90 xl:w-10">
@@ -134,6 +154,7 @@ const Contact: NextPage = () => {
                   rows={6}
                   className="rounded border border-light bg-dark py-3 px-4 text-base ring-light transition-all placeholder:font-extralight placeholder:text-light hover:bg-dark-off focus:ring-2 md:text-lg xl:text-2xl"
                   id="message"
+                  name="message"
                   placeholder="Enter your message here ..."
                   value={message}
                   onChange={(e) => {
@@ -148,8 +169,18 @@ const Contact: NextPage = () => {
                   type={ButtonTypes.Primary}
                   icon={<Send />}
                   clickHandler={handleFormSubmit}
+                  submitting={submitting}
                 />
               </div>
+
+              {sent && !submitting ? (
+                <p className="text-sm font-medium sm:text-lg md:text-xl xl:text-2xl">
+                  Thank you for reaching out! I&apos;ll get back to you when I
+                  can
+                </p>
+              ) : (
+                ""
+              )}
             </form>
           </div>
 
