@@ -10,6 +10,7 @@
     "slicemachine": "start-slicemachine"
   },
   "dependencies": {
+    "@formspark/use-formspark": "^0.1.39",
     "@headlessui/react": "^1.7.2",
     "@headlessui/tailwindcss": "^0.1.1",
     "@prismicio/client": "^6.7.1",
