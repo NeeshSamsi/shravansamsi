@@ -29,7 +29,7 @@
               "config": {
                 "label": "Link to Location",
                 "placeholder": "",
-                "allowTargetBlank": true,
+                "allowTargetBlank": false,
                 "select": null
               }
             }
@@ -55,7 +55,7 @@
       "ticket_link": {
         "type": "Link",
         "config": {
-          "label": "Link to Tickets",
+          "label": "Link to Tickets if Paid or Link to More Details",
           "placeholder": "",
           "allowTargetBlank": false,
           "select": null
