@@ -9,6 +9,7 @@ module.exports = {
       colors: {
         light: "#FFF4DC",
         dark: "#22201C",
+        "dark-off": "#2E2C26",
         accent: "#FFBA25",
       },
       fontFamily: {
@@ -21,5 +22,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwind-hamburgers")],
+  plugins: [require("tailwind-hamburgers"), require('@headlessui/tailwindcss')],
 };
