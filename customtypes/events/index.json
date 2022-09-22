@@ -36,6 +36,13 @@
           }
         }
       },
+      "date": {
+        "type": "Date",
+        "config": {
+          "label": "date",
+          "placeholder": ""
+        }
+      },
       "time": {
         "type": "Text",
         "config": {
