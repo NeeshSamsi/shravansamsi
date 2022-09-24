@@ -26,6 +26,7 @@ const Event = ({ event }: EventComponentType) => {
           src={poster.url}
           alt={poster.alt}
           layout="fill"
+          objectFit="contain"
         />
       </div>
       <div className="flex flex-col justify-between gap-4 sm:gap-0">

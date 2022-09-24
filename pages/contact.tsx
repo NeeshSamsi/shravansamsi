@@ -191,6 +191,7 @@ const Contact: NextPage = () => {
                 src="/hero-image.png"
                 alt="Hero Image"
                 layout="fill"
+                objectFit="contain"
               />
             </div>
           </div>
