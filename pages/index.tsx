@@ -60,6 +60,8 @@ const Home: NextPage = () => {
               <a
                 href="https://youtube.com/shravansamsi"
                 className="transition-all hover:text-accent"
+                rel="noreferrer"
+                target="_blank"
               >
                 <div className="h-10 sm:h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-16">
                   <YouTube />
@@ -68,6 +70,8 @@ const Home: NextPage = () => {
               <a
                 href="https://www.instagram.com/shravansamsi/"
                 className="transition-all hover:text-accent"
+                rel="noreferrer"
+                target="_blank"
               >
                 <div className="h-10 sm:h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-16">
                   <Instagram />
@@ -76,6 +80,8 @@ const Home: NextPage = () => {
               <a
                 href="https://www.facebook.com/shravansamsiofficial/"
                 className="transition-all hover:text-accent"
+                rel="noreferrer"
+                target="_blank"
               >
                 <div className="h-10 sm:h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-16">
                   <Facebook />
