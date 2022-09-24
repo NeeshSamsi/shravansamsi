@@ -14,7 +14,7 @@ export default function Navbar() {
   const currentRoute = router.pathname;
 
   return (
-    <nav className="sticky top-0 left-0 right-0 flex items-center justify-between bg-dark py-8 px-4 sm:px-8 md:px-12 lg:px-32 xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem] 3xl:px-0">
+    <nav className="sticky top-0 left-0 right-0 z-50 flex items-center justify-between bg-dark py-8 px-4 sm:px-8 md:px-12 lg:px-32 xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem] 3xl:px-0">
       <h2 className="z-10 text-3xl font-semibold lg:text-2xl xl:text-3xl 2xl:text-4xl">
         Shravan Samsi
       </h2>
