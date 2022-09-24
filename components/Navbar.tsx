@@ -90,19 +90,49 @@ export default function Navbar() {
         {/* Mobile Nav Links */}
         <div className="flex flex-col gap-6">
           <Link href="/">
-            <a className="block">Home</a>
+            <a
+              className={`block transition-all ${
+                currentRoute === "/" && "font-medium text-accent"
+              }`}
+            >
+              Home
+            </a>
           </Link>
           <Link href="/about">
-            <a className="block">About</a>
+            <a
+              className={`block transition-all ${
+                currentRoute === "/about" && "font-medium text-accent"
+              }`}
+            >
+              About
+            </a>
           </Link>
           <Link href="/events">
-            <a className="block">Events</a>
+            <a
+              className={`block transition-all ${
+                currentRoute === "/events" && "font-medium text-accent"
+              }`}
+            >
+              Events
+            </a>
           </Link>
           <Link href="/gallery">
-            <a className="block">Gallery</a>
+            <a
+              className={`block transition-all ${
+                currentRoute === "/gallery" && "font-medium text-accent"
+              }`}
+            >
+              Gallery
+            </a>
           </Link>
           <Link href="/contact">
-            <a className="block">Contact</a>
+            <a
+              className={`block transition-all ${
+                currentRoute === "/contact" && "font-medium text-accent"
+              }`}
+            >
+              Contact
+            </a>
           </Link>
         </div>
         {/* Mobile Socials */}
@@ -111,6 +141,8 @@ export default function Navbar() {
             <a
               href="https://youtube.com/shravansamsi"
               className="transition-all hover:text-accent"
+              rel="noreferrer"
+              target="_blank"
             >
               <div className="h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-16">
                 <YouTube />
@@ -119,6 +151,8 @@ export default function Navbar() {
             <a
               href="https://www.instagram.com/shravansamsi/"
               className="transition-all hover:text-accent"
+              rel="noreferrer"
+              target="_blank"
             >
               <div className="h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-16">
                 <Instagram />
@@ -127,6 +161,8 @@ export default function Navbar() {
             <a
               href="https://www.facebook.com/shravansamsiofficial/"
               className="transition-all hover:text-accent"
+              rel="noreferrer"
+              target="_blank"
             >
               <div className="h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-16">
                 <Facebook />
