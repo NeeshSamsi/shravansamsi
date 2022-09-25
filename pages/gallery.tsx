@@ -12,8 +12,14 @@ import Footer from "../components/Footer";
 import GalleryImage from "../components/GalleryImage";
 import CircleCaret from "../components/Icons/CircleCaret";
 import Navbar from "../components/Navbar";
+import client, { GalleryImageType } from "../lib/prismicio";
 
-const Gallery: NextPage = () => {
+interface GalleryProps {
+  featuredImages: GalleryImageType[];
+  gridImages: GalleryImageType[];
+}
+
+const Gallery: NextPage<GalleryProps> = ({ featuredImages, gridImages }) => {
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
 
@@ -35,10 +41,8 @@ const Gallery: NextPage = () => {
           role="Image carousel slideshow"
           className="mb-10 flex items-center justify-between md:mb-16 xl:mb-20 2xl:mb-24"
         >
-          {/* <SwiperButtonPrev /> */}
           <div
             className="hidden rotate-180 cursor-pointer transition-all hover:text-accent lg:block lg:h-16 2xl:h-20"
-            // onClick={() => swiper.slidePrev()}
             ref={prevRef}
           >
             <CircleCaret />
@@ -62,20 +66,17 @@ const Gallery: NextPage = () => {
               swiper.navigation.update();
             }}
           >
-            <SwiperSlide>
-              <CarouselImage />
-            </SwiperSlide>
-            <SwiperSlide>
-              <CarouselImage />
-            </SwiperSlide>
-            <SwiperSlide>
-              <CarouselImage />
-            </SwiperSlide>
+            {featuredImages.map((image) => {
+              const { dimensions, url, alt } = image;
+              return (
+                <SwiperSlide key={image.id}>
+                  <CarouselImage dimensions={dimensions} url={url} alt={alt} />
+                </SwiperSlide>
+              );
+            })}
           </Swiper>
-          {/* <SwiperButtonNext /> */}
           <div
             className="hidden cursor-pointer transition-all hover:text-accent lg:block lg:h-16 2xl:h-20"
-            // onClick={() => swiper.slideNext()}
             ref={nextRef}
           >
             <CircleCaret />
@@ -86,17 +87,51 @@ const Gallery: NextPage = () => {
           role="Gallery"
           className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 lg:gap-6 xl:gap-10 2xl:gap-20"
         >
-          <GalleryImage />
-          <GalleryImage />
-          <GalleryImage />
-          <GalleryImage />
-          <GalleryImage />
+          {gridImages.map((image) => {
+            const { id, dimensions, url, alt } = image;
+            return (
+              <GalleryImage
+                key={id}
+                dimensions={dimensions}
+                url={url}
+                alt={alt}
+              />
+            );
+          })}
         </section>
       </main>
+
+      <pre>
+        <code>{JSON.stringify(featuredImages, null, 2)}</code>
+        <code>{JSON.stringify(gridImages, null, 2)}</code>
+      </pre>
 
       <Footer />
     </>
   );
 };
+
+export async function getStaticProps() {
+  const data = await client.getAllByType("gallery_images", {
+    orderings: [{ field: "document.last_publication_date" }],
+  });
+
+  const galleryImages = data.map((image) => {
+    const galleryImage: GalleryImageType = {
+      id: image.id,
+      featured: image.data.featured,
+      dimensions: `${image.data.image.dimensions.width} × ${image.data.image.dimensions.height}`,
+      url: image.data.image.url,
+      alt: image.data.image.alt,
+    };
+
+    return galleryImage;
+  });
+
+  const featuredImages = galleryImages.filter((image) => image.featured);
+  const gridImages = galleryImages.filter((image) => !image.featured);
+
+  return { props: { featuredImages, gridImages } };
+}
 
 export default Gallery;
