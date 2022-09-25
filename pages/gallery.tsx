@@ -1,6 +1,8 @@
 import { NextPage } from "next";
+import { useRef } from "react";
+import Head from "next/head";
 
-import { useSwiper, Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -10,7 +12,6 @@ import Footer from "../components/Footer";
 import GalleryImage from "../components/GalleryImage";
 import CircleCaret from "../components/Icons/CircleCaret";
 import Navbar from "../components/Navbar";
-import { useRef } from "react";
 
 const Gallery: NextPage = () => {
   const prevRef = useRef<HTMLDivElement>(null);
@@ -18,6 +19,11 @@ const Gallery: NextPage = () => {
 
   return (
     <>
+      <Head>
+        <title>Gallery - Shravan Samsi</title>
+        <meta name="description" content="" />
+      </Head>
+
       <Navbar />
 
       <main className="px-4 pt-16 pb-24 sm:px-8 md:px-12 lg:px-32 xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem] 3xl:px-0">
@@ -46,7 +52,7 @@ const Gallery: NextPage = () => {
               delay: 3500,
               pauseOnMouseEnter: true,
             }}
-            speed={650}
+            speed={600}
             onInit={(swiper) => {
               // @ts-ignore
               swiper.params.navigation.prevEl = prevRef.current;
