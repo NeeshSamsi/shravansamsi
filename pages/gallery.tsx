@@ -101,11 +101,6 @@ const Gallery: NextPage<GalleryProps> = ({ featuredImages, gridImages }) => {
         </section>
       </main>
 
-      <pre>
-        <code>{JSON.stringify(featuredImages, null, 2)}</code>
-        <code>{JSON.stringify(gridImages, null, 2)}</code>
-      </pre>
-
       <Footer />
     </>
   );
