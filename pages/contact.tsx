@@ -6,6 +6,7 @@ import Image from "next/image";
 import { useFormspark } from "@formspark/use-formspark";
 
 import { Listbox } from "@headlessui/react";
+
 import Footer from "../components/Footer";
 import Navbar from "../components/Navbar";
 import Button, { ButtonTypes } from "../components/Button";
@@ -59,7 +60,7 @@ const Contact: NextPage = () => {
   return (
     <>
       <Head>
-        <title></title>
+        <title>Contact - Shravan Samsi</title>
         <meta name="description" content="" />
       </Head>
 
