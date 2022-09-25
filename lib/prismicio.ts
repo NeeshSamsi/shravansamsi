@@ -30,7 +30,6 @@ export interface EventType {
 
 export interface GalleryImageType {
   id: string;
-  lastPublicationDate: string;
   dimensions: string;
   url: string;
   alt: string;
