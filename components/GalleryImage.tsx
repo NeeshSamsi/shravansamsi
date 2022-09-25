@@ -5,22 +5,28 @@ import Download from "./Icons/Download";
 import Fullscreen from "./Icons/Fullscreen";
 import ImageDialog from "./ImageDialog";
 
-export default function GalleryImage() {
+interface GalleryImageProps {
+  dimensions: string;
+  url: string;
+  alt: string;
+}
+
+export default function GalleryImage({ dimensions, url, alt }: GalleryImageProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="relative aspect-square border border-light">
       <Image
         className="pointer-events-none -z-10 h-full w-full"
-        src="/gallery.jpg"
-        alt="Hero Image"
+        src={url}
+        alt={alt}
         layout="fill"
         objectFit="contain"
       />
 
       <div className="absolute inset-0 z-10 hidden h-full w-full bg-dark/70 p-6 text-light opacity-0 transition-all hover:opacity-100 lg:block">
         <div className="flex justify-between">
-          <p className="text-lg 2xl:text-xl">1920 x 1080</p>
+          <p className="text-lg 2xl:text-xl">{dimensions}</p>
           <a
             className="h-8 transition-all hover:text-accent 2xl:h-10"
             href=""
