@@ -12,14 +12,18 @@ export default function CarouselImage() {
         layout="fill"
         objectFit="contain"
       />
-      <div className="absolute inset-0 z-10 h-full w-full cursor-grab bg-dark/70 p-6 text-light opacity-0 transition-all hover:opacity-100">
+      <div className="absolute inset-0 z-10 hidden h-full w-full cursor-grab bg-dark/70 p-6 text-light opacity-0 transition-all hover:opacity-100 lg:block">
         <div className="flex justify-between">
-          <p className="text-2xl">1920 x 1080</p>
-          <a className="h-12 transition-all hover:text-accent" href="" download>
+          <p className="text-xl xl:text-2xl">1920 x 1080</p>
+          <a
+            className="h-9 transition-all hover:text-accent xl:h-12"
+            href=""
+            download
+          >
             <Download />
           </a>
         </div>
-        <div className="absolute inset-0 z-20 m-auto aspect-square h-16 cursor-pointer transition-all hover:text-accent">
+        <div className="absolute inset-0 z-20 m-auto aspect-square h-12 cursor-pointer transition-all hover:text-accent xl:h-16">
           <Fullscreen />
         </div>
       </div>
