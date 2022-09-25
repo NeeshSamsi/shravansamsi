@@ -33,7 +33,7 @@ export default function GalleryImage({
           <p className="text-lg 2xl:text-xl">{dimensions}</p>
           <a
             className="h-8 transition-all hover:text-accent 2xl:h-10"
-            href=""
+            href={url}
             download
           >
             <Download />
