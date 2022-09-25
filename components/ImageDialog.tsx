@@ -24,21 +24,23 @@ export default function ImageDialog({
     <Dialog
       open={isOpen}
       onClose={() => setIsOpen(false)}
-      className="relative z-50 hidden lg:block"
+      className="relative z-50"
     >
-      <Dialog.Panel className="fixed inset-0 flex h-screen w-full flex-col gap-6 bg-light py-6 px-8 text-dark">
+      <Dialog.Panel className="fixed inset-0 flex h-full w-full flex-col gap-6 bg-light py-6 px-8 text-dark">
         <div className="flex justify-between">
-          <p className="text-2xl font-medium xl:text-3xl">{dimensions}</p>
+          <p className="w-48 text-xl font-medium md:w-auto md:text-2xl xl:text-3xl">
+            {dimensions}
+          </p>
           <div className="flex gap-10">
             <a
-              className="h-10 transition-all hover:text-accent xl:h-14"
+              className="w-8 transition-all hover:text-accent md:w-10 xl:w-14"
               href={url}
               download
             >
               <Download />
             </a>
             <div
-              className="h-10 cursor-pointer transition-all hover:text-accent xl:h-14"
+              className="w-8 cursor-pointer transition-all hover:text-accent md:w-10 xl:w-14"
               onClick={() => setIsOpen(false)}
             >
               <Cross />

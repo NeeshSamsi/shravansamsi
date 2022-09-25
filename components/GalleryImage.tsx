@@ -20,13 +20,15 @@ export default function GalleryImage({
 
   return (
     <div className="relative aspect-square border border-light">
-      <Image
-        className="pointer-events-none -z-10 h-full w-full"
-        src={url}
-        alt={alt}
-        layout="fill"
-        objectFit="contain"
-      />
+      <div onClick={() => setIsOpen(true)}>
+        <Image
+          className="pointer-events-none -z-10 h-full w-full"
+          src={url}
+          alt={alt}
+          layout="fill"
+          objectFit="contain"
+        />
+      </div>
 
       <div className="absolute inset-0 z-10 hidden h-full w-full bg-dark/70 p-6 text-light opacity-0 transition-all hover:opacity-100 lg:block">
         <div className="flex justify-between">
@@ -35,6 +37,8 @@ export default function GalleryImage({
             className="h-8 transition-all hover:text-accent 2xl:h-10"
             href={url}
             download
+            rel="noreferrer"
+            target="_blank"
           >
             <Download />
           </a>

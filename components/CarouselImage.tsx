@@ -18,17 +18,17 @@ export default function CarouselImage({
 }: CarouselImageProps) {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log(dimensions, url, alt);
-
   return (
     <>
-      <Image
-        className="pointer-events-none -z-10 h-full w-full"
-        src={url}
-        alt={alt}
-        layout="fill"
-        objectFit="contain"
-      />
+      <div onClick={() => setIsOpen(true)}>
+        <Image
+          className="pointer-events-none -z-10 h-full w-full"
+          src={url}
+          alt={alt}
+          layout="fill"
+          objectFit="contain"
+        />
+      </div>
       <div className="absolute inset-0 z-10 hidden h-full w-full cursor-grab bg-dark/70 p-6 text-light opacity-0 transition-all hover:opacity-100 lg:block">
         <div className="flex justify-between">
           <p className="text-xl xl:text-2xl">{dimensions}</p>
@@ -36,6 +36,8 @@ export default function CarouselImage({
             className="h-9 transition-all hover:text-accent xl:h-12"
             href={url}
             download
+            rel="noreferrer"
+            target="_blank"
           >
             <Download />
           </a>
