@@ -12,34 +12,7 @@ import CircleCaret from "../components/Icons/CircleCaret";
 import Navbar from "../components/Navbar";
 import { useRef } from "react";
 
-const SwiperButtonPrev = () => {
-  const swiper = useSwiper();
-
-  return (
-    <div
-      className="h-20 rotate-180 cursor-pointer transition-all hover:text-accent"
-      onClick={() => swiper.slidePrev()}
-    >
-      <CircleCaret />
-    </div>
-  );
-};
-const SwiperButtonNext = () => {
-  const swiper = useSwiper();
-
-  return (
-    <div
-      className="h-20 cursor-pointer transition-all hover:text-accent"
-      onClick={() => swiper.slideNext()}
-    >
-      <CircleCaret />
-    </div>
-  );
-};
-
 const Gallery: NextPage = () => {
-  const swiper = useSwiper();
-
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
 
@@ -48,35 +21,32 @@ const Gallery: NextPage = () => {
       <Navbar />
 
       <main className="px-4 pt-16 pb-24 sm:px-8 md:px-12 lg:px-32 xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem] 3xl:px-0">
-        <h1 className="font-smallcaps mb-16 rounded-lg bg-accent py-8 text-center font-serif text-6xl font-bold text-dark xl:text-9xl">
+        <h1 className="font-smallcaps 2xl:9xl mb-16 rounded-lg bg-accent py-8 text-center font-serif text-6xl font-bold text-dark xl:text-8xl">
           Gallery
         </h1>
 
         <section
           role="Image carousel slideshow"
-          className="mb-24 flex items-center justify-between"
+          className="mb-10 flex items-center justify-between md:mb-16 xl:mb-20 2xl:mb-24"
         >
           {/* <SwiperButtonPrev /> */}
           <div
-            className="h-20 rotate-180 cursor-pointer transition-all hover:text-accent"
+            className="hidden rotate-180 cursor-pointer transition-all hover:text-accent lg:block lg:h-16 2xl:h-20"
             // onClick={() => swiper.slidePrev()}
             ref={prevRef}
           >
             <CircleCaret />
           </div>
           <Swiper
-            className="relative aspect-video w-3/4 border-2 border-light"
+            className="relative aspect-video w-full border-2 border-light lg:w-3/4"
             modules={[Navigation, Autoplay]}
             slidesPerView={1}
             loop
             autoplay={{
-              delay: 5000,
+              delay: 3500,
               pauseOnMouseEnter: true,
             }}
-            // navigation={{
-            //   prevEl: prevRef.current ? prevRef.current : undefined,
-            //   nextEl: nextRef.current ? nextRef.current : undefined,
-            // }}
+            speed={650}
             onInit={(swiper) => {
               // @ts-ignore
               swiper.params.navigation.prevEl = prevRef.current;
@@ -98,7 +68,7 @@ const Gallery: NextPage = () => {
           </Swiper>
           {/* <SwiperButtonNext /> */}
           <div
-            className="h-20 cursor-pointer transition-all hover:text-accent"
+            className="hidden cursor-pointer transition-all hover:text-accent lg:block lg:h-16 2xl:h-20"
             // onClick={() => swiper.slideNext()}
             ref={nextRef}
           >
@@ -106,7 +76,10 @@ const Gallery: NextPage = () => {
           </div>
         </section>
 
-        <section role="Gallery" className="grid grid-cols-3 gap-20">
+        <section
+          role="Gallery"
+          className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 lg:gap-6 xl:gap-10 2xl:gap-20"
+        >
           <GalleryImage />
           <GalleryImage />
           <GalleryImage />
