@@ -11,7 +11,11 @@ interface GalleryImageProps {
   alt: string;
 }
 
-export default function GalleryImage({ dimensions, url, alt }: GalleryImageProps) {
+export default function GalleryImage({
+  dimensions,
+  url,
+  alt,
+}: GalleryImageProps) {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
@@ -43,7 +47,13 @@ export default function GalleryImage({ dimensions, url, alt }: GalleryImageProps
         </div>
       </div>
 
-      <ImageDialog isOpen={isOpen} setIsOpen={setIsOpen} />
+      <ImageDialog
+        isOpen={isOpen}
+        setIsOpen={setIsOpen}
+        dimensions={dimensions}
+        url={url}
+        alt={alt}
+      />
     </div>
   );
 }

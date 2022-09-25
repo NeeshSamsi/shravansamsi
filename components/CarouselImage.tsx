@@ -47,7 +47,13 @@ export default function CarouselImage({
           <Fullscreen />
         </div>
 
-        <ImageDialog isOpen={isOpen} setIsOpen={setIsOpen} />
+        <ImageDialog
+          isOpen={isOpen}
+          setIsOpen={setIsOpen}
+          dimensions={dimensions}
+          url={url}
+          alt={alt}
+        />
       </div>
     </>
   );

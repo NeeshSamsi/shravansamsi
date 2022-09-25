@@ -8,9 +8,18 @@ import Cross from "./Icons/Cross";
 interface ImageDialogProps {
   isOpen: boolean;
   setIsOpen: (a: boolean) => void;
+  dimensions: string;
+  url: string;
+  alt: string;
 }
 
-export default function ImageDialog({ isOpen, setIsOpen }: ImageDialogProps) {
+export default function ImageDialog({
+  isOpen,
+  setIsOpen,
+  dimensions,
+  url,
+  alt,
+}: ImageDialogProps) {
   return (
     <Dialog
       open={isOpen}
@@ -19,11 +28,11 @@ export default function ImageDialog({ isOpen, setIsOpen }: ImageDialogProps) {
     >
       <Dialog.Panel className="fixed inset-0 flex h-screen w-full flex-col gap-6 bg-light py-6 px-8 text-dark">
         <div className="flex justify-between">
-          <p className="text-2xl font-medium xl:text-3xl">1920 x 1080</p>
+          <p className="text-2xl font-medium xl:text-3xl">{dimensions}</p>
           <div className="flex gap-10">
             <a
               className="h-10 transition-all hover:text-accent xl:h-14"
-              href=""
+              href={url}
               download
             >
               <Download />
@@ -39,8 +48,8 @@ export default function ImageDialog({ isOpen, setIsOpen }: ImageDialogProps) {
         <div className="relative h-full w-full">
           <Image
             className="-z-10 h-full w-full bg-dark"
-            src="/gallery.jpg"
-            alt="Hero Image"
+            src={url}
+            alt={alt}
             layout="fill"
             objectFit="contain"
           />
