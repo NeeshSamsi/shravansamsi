@@ -20,29 +20,6 @@ export default async function handler(
 
     const fileName = url.slice(url.lastIndexOf("/") + 1, url.lastIndexOf("?"));
     const fileExtension = fileName.slice(fileName.lastIndexOf(".") + 1);
-
-    const response = await fetch(url);
-    if (!response.ok)
-      return res
-        .status(404)
-        .send({ message: "Error fetching file", error: response });
-
-    switch (fileType) {
-      case "image":
-        res.setHeader("Content-Type", `image/${fileExtension}`);
-        break;
-      case "pdf":
-        res.setHeader("Content-Type", "application/pdf");
-      default:
-        res.setHeader("Content-Type", "application/json");
-        break;
-    }
-    res.setHeader("Content-Disposition", `attachment; filename=${fileName}`);
-
-    await pipeline(response.body, res);
-    res.pipe;
-
-    // res.send({ url, fileType });
   }
   return res.status(405).send({ error: "Unauthorised request method." });
 }
