@@ -34,30 +34,33 @@ const About: NextPage = () => {
             </div>
           </div>
 
-          <div className="flex w-full flex-col items-center gap-6 text-center text-lg font-light leading-relaxed sm:text-xl md:w-1/2 md:items-start md:text-left md:text-lg lg:text-xl xl:gap-10 xl:text-2xl ">
+          <div className="flex w-full flex-col items-center gap-6 text-center text-lg font-light leading-relaxed sm:text-xl md:w-1/2 md:items-start md:text-left md:text-xl lg:text-2xl xl:gap-10 xl:text-3xl ">
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. At cursus
-              vitae morbi semper lobortis euismod sit. Hendrerit elementum
-              tellus diam, libero. Congue a maecenas tincidunt tellus netus.
-              Pulvinar sapien, enim sed sapien, morbi nisl nunc nec, leo. Mattis
-              nisl eleifend nec accumsan at nullam. Vel mi convallis etiam
-              dictum posuere risus.
+              Shravan has brought about a perfect balance between his roots in
+              Indian and passion for Western Rhythm, converging multiple schools
+              of thought and incorporating nuances and aesthetics of repertoire
+              throughout his performance and production. He began his training
+              under tabla phenomenon, Pandit Yogesh Samsi and later from
+              globally renowned music director and percussionist Maestro Ranjit
+              Barot.
             </p>
             <p>
-              Congue praesent nec aliquet at quam. Sit enim convallis augue
-              cursus at eros luctus. Egestas mauris arcu, tellus pulvinar odio
-              egestas quis. Interdum quis ac magna lorem integer. Justo netus
-              tristique sed ipsum mattis vitae. Tempor tempor fermentum,
-              dignissim habitasse feugiat consequat. Non elit ipsum ac, amet,
-              tristique tellus leo. Massa netus quis nunc tortor consectetur leo
-              a, velit sem.
+              His captivating stage presence and command over his instrument in
+              his performances has led him to perform at venues all across India
+              and abroad. He has played at prestigious musical gatherings such
+              as the Taal Chakra Music Festival, International Jazz Day at
+              Antisocial, Covelong Surf Festival, Midlands Arts Centre
+              Birmingham, ACC World Music Festival in South Korea.
             </p>
             <p>
-              In ipsum fermentum tortor euismod tortor, pretium. Sit consequat
-              in faucibus turpis tincidunt. Id pellentesque bibendum eget
-              vestibulum pellentesque nunc, sapien. Amet, odio ultrices a sed
-              condimentum lobortis eu, elementum. Quam tortor, nulla in
-              venenatis sed nibh.
+              His unique outlook on music has sparked many moments of musical
+              explorations alongside stalwarts of the Indian Music scene namely;
+              Ustad Fazal Qureshi, Pandit Purbayan Chatterjee, Pandit Ravindra
+              Chary, Padmashree Soma Ghosh and his father, Pandit Yogesh Samsi,
+              to name but a few. And brought him to share stage with the
+              greatest Musicians in India, Gino Banks, Viveick Rajagopalan,
+              Harmeet Manseta, Sanjay Divecha, Joe Alvarez, Darshan Doshi, Manas
+              Kumar, Abhay Nayampally to name a few.
             </p>
 
             <a href="https://shravansamsi.com/" className="text-xl lg:text-2xl">

@@ -26,13 +26,16 @@ const Home: NextPage = () => {
       <main className="flex h-screen flex-col px-4 text-center sm:px-8 md:px-12 lg:justify-center lg:px-32 lg:text-left xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem] 3xl:px-0">
         <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="py-auto w-auto lg:w-2/5">
-            <h1 className="font-smallcaps mb-4 font-serif text-4xl font-bold md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl 3xl:text-9xl">
-              Massive Tagline of Some Sort
+            <h1 className="font-smallcaps mb-8 font-serif text-3xl font-bold md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl">
+              Error 1702 // The Fabric of Reality has Bent
             </h1>
-            <p className="mb-6 text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
-              Subheading / para - Lorem ipsum dolor sit amet consectetur
-              adipiscing elit Ut et massa mi. Aliquam in hendrerit urna.
-              Pellentesque sit amet sapien.
+            <p className="mb-4 text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
+              You have successfully established contact with Subject 170297. On
+              a constant orbittal journey around planet Everything Music
+            </p>
+            <p className="mb-8 text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
+              You can use this portal to enquire about sessions, drum lessons
+              and other music production related gigs.
             </p>
 
             <div className="mb-6 flex items-center justify-center gap-4 text-sm sm:text-base md:gap-6 lg:justify-start lg:gap-2 lg:text-lg xl:gap-6 2xl:gap-10 2xl:text-2xl 3xl:text-3xl">
