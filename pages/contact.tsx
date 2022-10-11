@@ -70,7 +70,7 @@ const Contact: NextPage = () => {
         <div className="flex flex-col justify-center gap-10 md:flex-row md:gap-0 xl:justify-between">
           <div className="flex w-full flex-col gap-12 xl:w-1/2 xl:gap-16 2xl:w-2/5">
             <h1 className="font-smallcaps rounded-lg bg-accent py-8 text-center font-serif text-6xl font-bold text-dark xl:text-9xl">
-              About
+              Contact
             </h1>
 
             <form className="flex flex-col gap-8">
