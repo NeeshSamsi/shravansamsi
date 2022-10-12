@@ -22,7 +22,7 @@ export default function Button({
 }: ButtonProps) {
   return (
     <button
-      className={`relative flex items-center gap-2 self-center rounded py-1 px-2 font-serif font-bold tracking-wider transition-all sm:px-3 sm:py-2 md:gap-4 md:self-start
+      className={`relative flex items-center gap-2 self-center rounded px-3 py-2 font-serif font-bold tracking-wider transition-all md:gap-4 md:self-start
       ${type === ButtonTypes.Primary && `bg-accent text-dark hover:bg-light`}
       ${
         type === ButtonTypes.Secondary &&
@@ -30,7 +30,7 @@ export default function Button({
       }
       ${
         submitting &&
-        "after:absolute after:inset-0 after:m-auto after:h-8 after:w-8 after:rounded-full after:border-[0.3rem] after:border-transparent after:border-t-dark after:animate-spin"
+        "after:absolute after:inset-0 after:m-auto after:h-8 after:w-8 after:animate-spin after:rounded-full after:border-[0.3rem] after:border-transparent after:border-t-dark"
       }
       `}
       {...(clickHandler && { onClick: clickHandler })}
