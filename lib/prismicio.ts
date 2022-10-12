@@ -36,4 +36,9 @@ export interface GalleryImageType {
   featured: boolean;
 }
 
+export interface YouTubeVideoType {
+  id: string;
+  url: string;
+}
+
 export default client;
