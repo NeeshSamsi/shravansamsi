@@ -12,14 +12,19 @@ import Footer from "../components/Footer";
 import GalleryImage from "../components/GalleryImage";
 import CircleCaret from "../components/Icons/CircleCaret";
 import Navbar from "../components/Navbar";
-import client, { GalleryImageType } from "../lib/prismicio";
+import client, { GalleryImageType, YouTubeVideoType } from "../lib/prismicio";
 
 interface GalleryProps {
   featuredImages: GalleryImageType[];
   gridImages: GalleryImageType[];
+  youtubeVideos: YouTubeVideoType[];
 }
 
-const Gallery: NextPage<GalleryProps> = ({ featuredImages, gridImages }) => {
+const Gallery: NextPage<GalleryProps> = ({
+  featuredImages,
+  gridImages,
+  youtubeVideos,
+}) => {
   const prevRef = useRef<HTMLDivElement>(null);
   const nextRef = useRef<HTMLDivElement>(null);
 
@@ -87,30 +92,20 @@ const Gallery: NextPage<GalleryProps> = ({ featuredImages, gridImages }) => {
           role="YouTube Video Gallery"
           className="mb-10 grid grid-cols-2 gap-4 md:mb-16 md:gap-8 lg:gap-6 xl:mb-20 xl:gap-10 2xl:mb-24 2xl:gap-20"
         >
-          <div className="border-2 border-light">
-            <iframe
-              className="aspect-video"
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/BK8I1U2ie0g"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
-          <div className="border-2 border-light">
-            <iframe
-              className="aspect-video"
-              width="100%"
-              height="100%"
-              src="https://www.youtube.com/embed/GqvrU2J1uB4"
-              title="YouTube video player"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
-          </div>
+          {youtubeVideos.map((video) => (
+            <div className="border-2 border-light" key={video.id}>
+              <iframe
+                className="aspect-video"
+                width="100%"
+                height="100%"
+                src={video.url}
+                title="YouTube video player"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              ></iframe>
+            </div>
+          ))}
         </section>
 
         <section
@@ -137,11 +132,11 @@ const Gallery: NextPage<GalleryProps> = ({ featuredImages, gridImages }) => {
 };
 
 export async function getStaticProps() {
-  const data = await client.getAllByType("gallery_images", {
+  const images = await client.getAllByType("gallery_images", {
     orderings: [{ field: "document.last_publication_date" }],
   });
 
-  const galleryImages = data.map((image) => {
+  const galleryImages = images.map((image) => {
     const galleryImage: GalleryImageType = {
       id: image.id,
       featured: image.data.featured,
@@ -156,7 +151,16 @@ export async function getStaticProps() {
   const featuredImages = galleryImages.filter((image) => image.featured);
   const gridImages = galleryImages.filter((image) => !image.featured);
 
-  return { props: { featuredImages, gridImages } };
+  const links = await client.getAllByType("youtube_videos");
+
+  const youtubeVideos: YouTubeVideoType[] = links.map((link) => {
+    return {
+      id: link.id,
+      url: link.data.youtube_embed_link.url,
+    };
+  });
+
+  return { props: { featuredImages, gridImages, youtubeVideos } };
 }
 
 export default Gallery;
