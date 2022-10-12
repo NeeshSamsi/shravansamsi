@@ -34,8 +34,9 @@ export default function ImageDialog({
           <div className="flex gap-10">
             <a
               className="w-8 transition-all hover:text-accent md:w-10 xl:w-14"
-              href={url}
-              download
+              href={`/api/download?url=${url}`}
+              rel="noreferrer"
+              target="_blank"
             >
               <Download />
             </a>

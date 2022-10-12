@@ -11,15 +11,41 @@ export default async function handler(
   req: NextApiRequest,
   res: NextApiResponse
 ) {
-  if (req.method === "POST") {
-    const { url, fileType } = req.body;
+  const { url } = req.query;
 
-    if (!url || !fileType) {
-      return res.status(404).send({ error: "Incomplete request body" });
-    }
-
-    const fileName = url.slice(url.lastIndexOf("/") + 1, url.lastIndexOf("?"));
-    const fileExtension = fileName.slice(fileName.lastIndexOf(".") + 1);
+  if (!url) {
+    return res.status(404).send({ error: "No url provided" });
   }
-  return res.status(405).send({ error: "Unauthorised request method." });
+
+  const fileName = url.slice(url.lastIndexOf("/") + 1, url.lastIndexOf("?"));
+  const fileExtension = fileName.slice(fileName.lastIndexOf(".") + 1);
+
+  const picRes = await fetch(url);
+
+  console.log(
+    picRes.headers.get("content-type"),
+    picRes.headers.get("content-length")
+  );
+
+  const imageBlob = await picRes.blob();
+
+  const chunks: any[] = [];
+
+  for (const chunk of imageBlob.stream().read()) {
+    chunks.push(chunk);
+  }
+
+  res.setHeader(
+    "content-type",
+    picRes.headers.get("content-type") || `image/${fileExtension}`
+  );
+  res.setHeader(
+    "content-length",
+    picRes.headers.get("content-length") || chunks.length
+  );
+  res.setHeader("Content-Disposition", `attachment; filename=${fileName}`);
+
+  res.write(Uint8Array.from(chunks));
+
+  return res.status(200).end();
 }

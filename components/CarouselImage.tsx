@@ -34,8 +34,7 @@ export default function CarouselImage({
           <p className="text-xl xl:text-2xl">{dimensions}</p>
           <a
             className="h-9 transition-all hover:text-accent xl:h-12"
-            href={url}
-            download
+            href={`/api/download?url=${url}`}
             rel="noreferrer"
             target="_blank"
           >
