@@ -6,7 +6,8 @@
       },
       "location": {}
     },
-    "gallery_images": {}
+    "gallery_images": {},
+    "youtube_videos": {}
   },
   "slices": {
     "Event": {}

@@ -1,0 +1,18 @@
+{
+  "id": "youtube_videos",
+  "label": "Featured YouTube Videos",
+  "repeatable": true,
+  "status": true,
+  "json": {
+    "Main": {
+      "youtube_embed_link": {
+        "type": "Link",
+        "config": {
+          "label": "YouTube Embed Link",
+          "placeholder": "",
+          "select": null
+        }
+      }
+    }
+  }
+}
