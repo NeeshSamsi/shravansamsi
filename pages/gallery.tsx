@@ -90,7 +90,7 @@ const Gallery: NextPage<GalleryProps> = ({
 
         <section
           role="YouTube Video Gallery"
-          className="mb-10 grid grid-cols-2 gap-4 md:mb-16 md:gap-8 lg:gap-6 xl:mb-20 xl:gap-10 2xl:mb-24 2xl:gap-20"
+          className="mb-10 grid gap-4 md:mb-16 md:gap-8 lg:grid-cols-2 lg:gap-6 xl:mb-20 xl:gap-10 2xl:mb-24 2xl:gap-20"
         >
           {youtubeVideos.map((video) => (
             <div className="border-2 border-light" key={video.id}>
