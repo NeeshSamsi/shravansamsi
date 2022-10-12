@@ -84,7 +84,37 @@ const Gallery: NextPage<GalleryProps> = ({ featuredImages, gridImages }) => {
         </section>
 
         <section
-          role="Gallery"
+          role="YouTube Video Gallery"
+          className="mb-10 grid grid-cols-2 gap-4 md:mb-16 md:gap-8 lg:gap-6 xl:mb-20 xl:gap-10 2xl:mb-24 2xl:gap-20"
+        >
+          <div className="border-2 border-light">
+            <iframe
+              className="aspect-video"
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/BK8I1U2ie0g"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className="border-2 border-light">
+            <iframe
+              className="aspect-video"
+              width="100%"
+              height="100%"
+              src="https://www.youtube.com/embed/GqvrU2J1uB4"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+        </section>
+
+        <section
+          role="Image Gallery"
           className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 lg:gap-6 xl:gap-10 2xl:gap-20"
         >
           {gridImages.map((image) => {
