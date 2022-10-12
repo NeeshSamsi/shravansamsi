@@ -20,6 +20,7 @@ export default async function handler(
   const fileName = url.slice(url.lastIndexOf("/") + 1, url.lastIndexOf("?"));
   const fileExtension = fileName.slice(fileName.lastIndexOf(".") + 1);
 
+  //@ts-ignore
   const picRes = await fetch(url);
 
   console.log(
@@ -31,6 +32,7 @@ export default async function handler(
 
   const chunks: any[] = [];
 
+  //@ts-ignore
   for (const chunk of imageBlob.stream().read()) {
     chunks.push(chunk);
   }
