@@ -189,8 +189,8 @@ const Contact: NextPage = () => {
             <div className="relative -z-10 aspect-square w-full rounded-full bg-light">
               <Image
                 className="h-full w-full"
-                src="/hero-image.png"
-                alt="Hero Image"
+                src="/contact.png"
+                alt="Shravan Samsi"
                 layout="fill"
                 objectFit="contain"
               />

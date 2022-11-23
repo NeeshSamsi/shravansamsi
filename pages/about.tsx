@@ -26,8 +26,8 @@ const About: NextPage = () => {
             <div className="relative -z-10 aspect-square w-full rounded-full bg-light lg:block">
               <Image
                 className="h-full w-full"
-                src="/hero-image.png"
-                alt="Hero Image"
+                src="/about.png"
+                alt="Shravan Samsi"
                 layout="fill"
                 objectFit="contain"
               />

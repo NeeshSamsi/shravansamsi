@@ -96,8 +96,8 @@ const Home: NextPage = () => {
           <div className="3xl:2/5 relative -z-10 aspect-square w-full rounded-full bg-light sm:w-3/4 lg:block lg:w-1/2 2xl:w-1/2">
             <Image
               className="h-full w-full"
-              src="/hero-image.png"
-              alt="Hero Image"
+              src="/hero.png"
+              alt="Shravan Samsi"
               layout="fill"
               objectFit="contain"
             />
