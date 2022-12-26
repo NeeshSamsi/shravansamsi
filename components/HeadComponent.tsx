@@ -13,7 +13,7 @@ export default function HeadComponent({
   imageUrl,
   path,
 }: HeadProps) {
-  const domain = "shravansamsi";
+  const domain = "shravansamsi.com";
 
   return (
     <Head>
