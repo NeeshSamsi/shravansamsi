@@ -6,15 +6,16 @@ import Footer from "../components/Footer";
 import HeadComponent from "../components/HeadComponent";
 import Download from "../components/Icons/Download";
 import Navbar from "../components/Navbar";
+import client from "../lib/prismicio";
 
-const About: NextPage = () => {
+const About: NextPage<{ biodataPdf: string }> = ({ biodataPdf }) => {
   return (
     <>
       <HeadComponent
         title="About - Shravan Samsi"
         description=""
         imageUrl=""
-        path="/"
+        path="about"
       />
 
       <Navbar />
@@ -66,7 +67,12 @@ const About: NextPage = () => {
               Kumar, Abhay Nayampally to name a few.
             </p>
 
-            <a href="https://shravansamsi.com/" className="text-xl lg:text-2xl">
+            <a
+              className="text-xl lg:text-2xl"
+              href={`/api/download?url=${biodataPdf}`}
+              rel="noreferrer"
+              target="_blank"
+            >
               <Button
                 type={ButtonTypes.Primary}
                 text="Download full Bio"
@@ -81,5 +87,11 @@ const About: NextPage = () => {
     </>
   );
 };
+
+export async function getStaticProps() {
+  const biodataPdf = await client.getAllByType("biodata_pdf");
+
+  return { props: { biodataPdf: biodataPdf[0].data.pdf.url } };
+}
 
 export default About;
