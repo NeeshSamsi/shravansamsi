@@ -12,6 +12,7 @@ import Navbar from "../components/Navbar";
 import Button, { ButtonTypes } from "../components/Button";
 import Caret from "../components/Icons/Caret";
 import Send from "../components/Icons/Send";
+import HeadComponent from "../components/HeadComponent";
 
 const Contact: NextPage = () => {
   let [submit, submitting] = useFormspark({
@@ -59,10 +60,12 @@ const Contact: NextPage = () => {
 
   return (
     <>
-      <Head>
-        <title>Contact - Shravan Samsi</title>
-        <meta name="description" content="" />
-      </Head>
+      <HeadComponent
+        title="Contact - Shravan Samsi"
+        description=""
+        imageUrl=""
+        path="/"
+      />
 
       <Navbar />
 

@@ -3,16 +3,19 @@ import Head from "next/head";
 import Image from "next/image";
 import Button, { ButtonTypes } from "../components/Button";
 import Footer from "../components/Footer";
+import HeadComponent from "../components/HeadComponent";
 import Download from "../components/Icons/Download";
 import Navbar from "../components/Navbar";
 
 const About: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>About - Shravan Samsi</title>
-        <meta name="description" content="" />
-      </Head>
+      <HeadComponent
+        title="About - Shravan Samsi"
+        description=""
+        imageUrl=""
+        path="/"
+      />
 
       <Navbar />
 

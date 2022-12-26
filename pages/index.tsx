@@ -1,6 +1,9 @@
 import type { NextPage } from "next";
+
+import Image from "next/image";
+import Link from "next/link";
+
 import { ButtonTypes } from "../components/Button";
-import Head from "next/head";
 import Button from "../components/Button";
 import Navbar from "../components/Navbar";
 import {
@@ -10,16 +13,17 @@ import {
   Instagram,
   Facebook,
 } from "../components/Icons";
-import Image from "next/image";
-import Link from "next/link";
+import HeadComponent from "../components/HeadComponent";
 
 const Home: NextPage = () => {
   return (
     <>
-      <Head>
-        <title>Home - Shravan Samsi</title>
-        <meta name="description" content="" />
-      </Head>
+      <HeadComponent
+        title="Home - Shravan Samsi"
+        description=""
+        imageUrl=""
+        path="/"
+      />
 
       <Navbar />
 
@@ -31,7 +35,7 @@ const Home: NextPage = () => {
             </h1>
             <p className="mb-4 text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
               You have successfully established contact with Subject 170297. On
-              a constant orbittal journey around planet Everything Music
+              a constant orbital journey around planet Everything Music
             </p>
             <p className="mb-8 text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
               You can use this portal to enquire about sessions, drum lessons

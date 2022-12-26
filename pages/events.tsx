@@ -3,6 +3,7 @@ import Head from "next/head";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Event from "../components/Event";
+import HeadComponent from "../components/HeadComponent";
 import client, { EventType } from "../lib/prismicio";
 
 interface EventsProps {
@@ -12,10 +13,12 @@ interface EventsProps {
 const Events: NextPage<EventsProps> = ({ events }) => {
   return (
     <>
-      <Head>
-        <title>Events - Shravan Samsi</title>
-        <meta name="description" content="" />
-      </Head>
+      <HeadComponent
+        title="Events - Shravan Samsi"
+        description=""
+        imageUrl=""
+        path="/"
+      />
 
       <Navbar />
 

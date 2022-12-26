@@ -1,6 +1,5 @@
 import { NextPage } from "next";
 import { useRef } from "react";
-import Head from "next/head";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Autoplay } from "swiper";
@@ -12,6 +11,7 @@ import Footer from "../components/Footer";
 import GalleryImage from "../components/GalleryImage";
 import CircleCaret from "../components/Icons/CircleCaret";
 import Navbar from "../components/Navbar";
+import HeadComponent from "../components/HeadComponent";
 import client, { GalleryImageType, YouTubeVideoType } from "../lib/prismicio";
 
 interface GalleryProps {
@@ -30,10 +30,12 @@ const Gallery: NextPage<GalleryProps> = ({
 
   return (
     <>
-      <Head>
-        <title>Gallery - Shravan Samsi</title>
-        <meta name="description" content="" />
-      </Head>
+      <HeadComponent
+        title="Gallery - Shravan Samsi"
+        description=""
+        imageUrl=""
+        path="/"
+      />
 
       <Navbar />
 
