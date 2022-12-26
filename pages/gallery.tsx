@@ -34,7 +34,7 @@ const Gallery: NextPage<GalleryProps> = ({
         title="Gallery - Shravan Samsi"
         description=""
         imageUrl=""
-        path="/"
+        path="gallery"
       />
 
       <Navbar />

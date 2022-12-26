@@ -64,7 +64,7 @@ const Contact: NextPage = () => {
         title="Contact - Shravan Samsi"
         description=""
         imageUrl=""
-        path="/"
+        path="contact"
       />
 
       <Navbar />

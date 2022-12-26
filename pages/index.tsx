@@ -22,7 +22,7 @@ const Home: NextPage = () => {
         title="Home - Shravan Samsi"
         description=""
         imageUrl=""
-        path="/"
+        path=""
       />
 
       <Navbar />
@@ -31,11 +31,11 @@ const Home: NextPage = () => {
         <div className="flex flex-col-reverse items-center gap-6 lg:flex-row lg:items-center lg:justify-between">
           <div className="py-auto w-auto lg:w-2/5">
             <h1 className="font-smallcaps mb-8 font-serif text-3xl font-bold md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl">
-              Error 1702 // The Fabric of Reality has Bent
+              The Fabric of Reality has Bent
             </h1>
             <p className="mb-4 text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
               You have successfully established contact with Subject 170297. On
-              a constant orbital journey around planet Everything Music
+              a constant orbital journey around planet Music
             </p>
             <p className="mb-8 text-lg md:text-xl lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl">
               You can use this portal to enquire about sessions, drum lessons
