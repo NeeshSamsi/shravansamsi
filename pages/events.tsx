@@ -17,7 +17,7 @@ const Events: NextPage<EventsProps> = ({ events }) => {
         title="Events - Shravan Samsi"
         description=""
         imageUrl=""
-        path="/"
+        path="events"
       />
 
       <Navbar />
@@ -48,7 +48,7 @@ export async function getStaticProps() {
     orderings: [{ field: "my.events.date", direction: "asc" }],
   });
 
-  const events: EventType[] = data.map((event) => ({
+  const formattedData: EventType[] = data.map((event) => ({
     id: event.id,
     type: event.type,
     href: event.href,
@@ -71,6 +71,12 @@ export async function getStaticProps() {
       },
     },
   }));
+
+  const events = formattedData.filter(
+    (event) =>
+      new Date(event.data.date).toDateString() === new Date().toDateString() ||
+      new Date(event.data.date) > new Date()
+  );
 
   return { props: { events }, revalidate: 60 };
 }
