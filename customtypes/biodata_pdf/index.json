@@ -1,0 +1,18 @@
+{
+  "id": "biodata_pdf",
+  "label": "Biodata PDF",
+  "repeatable": false,
+  "status": true,
+  "json": {
+    "Main": {
+      "pdf": {
+        "type": "Link",
+        "config": {
+          "label": "PDF",
+          "placeholder": "",
+          "select": null
+        }
+      }
+    }
+  }
+}
