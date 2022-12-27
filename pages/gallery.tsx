@@ -133,7 +133,7 @@ const Gallery: NextPage<GalleryProps> = ({
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const images = await client.getAllByType("gallery_images", {
     orderings: [{ field: "document.last_publication_date" }],
   });

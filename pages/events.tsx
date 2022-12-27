@@ -43,7 +43,7 @@ const Events: NextPage<EventsProps> = ({ events }) => {
   );
 };
 
-export async function getStaticProps() {
+export async function getServerSideProps() {
   const data = await client.getAllByType("events", {
     orderings: [{ field: "my.events.date", direction: "asc" }],
   });
