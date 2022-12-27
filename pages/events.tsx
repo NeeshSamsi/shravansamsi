@@ -78,7 +78,7 @@ export async function getServerSideProps() {
       new Date(event.data.date) > new Date()
   );
 
-  return { props: { events }, revalidate: 60 };
+  return { props: { events } };
 }
 
 export default Events;
