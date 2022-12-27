@@ -1,10 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 
-import stream from "stream";
-import { promisify } from "util";
-
-const pipeline = promisify(stream.pipeline);
-
 //  https://images.prismic.io/slicemachine-blank/dcea6535-f43b-49a7-8623-bf281aaf1cb2_roller-skating.png?auto=compress,format
 
 export default async function handler(
@@ -17,22 +12,28 @@ export default async function handler(
     return res.status(404).send({ error: "No url provided" });
   }
 
-  const fileName = url.slice(url.lastIndexOf("/") + 1, url.lastIndexOf("?"));
+  let fileWithID;
+
+  if (url.includes("?")) {
+    fileWithID = url.slice(url.lastIndexOf("/") + 1, url.lastIndexOf("?"));
+  } else {
+    fileWithID = url.slice(url.lastIndexOf("/") + 1);
+  }
+
+  const fileName = fileWithID.slice(fileWithID.indexOf("_") + 1);
+
   const fileExtension = fileName.slice(fileName.lastIndexOf(".") + 1);
+
+  console.log(fileName);
 
   //@ts-ignore
   const picRes = await fetch(url);
-
-  console.log(
-    picRes.headers.get("content-type"),
-    picRes.headers.get("content-length")
-  );
 
   const imageBlob = await picRes.blob();
 
   const chunks: any[] = [];
 
-  //@ts-ignore
+  // @ts-ignore
   for (const chunk of imageBlob.stream().read()) {
     chunks.push(chunk);
   }
