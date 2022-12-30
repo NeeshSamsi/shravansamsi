@@ -1,9 +1,9 @@
 import { NextPage } from "next";
-import Head from "next/head";
 import Image from "next/image";
 import Button, { ButtonTypes } from "../components/Button";
 import Footer from "../components/Footer";
 import HeadComponent from "../components/HeadComponent";
+import { RightArrow } from "../components/Icons";
 import Download from "../components/Icons/Download";
 import Navbar from "../components/Navbar";
 import client from "../lib/prismicio";
@@ -53,32 +53,41 @@ const About: NextPage<{ biodataPdf: string }> = ({ biodataPdf }) => {
               his performances has led him to perform at venues all across India
               and abroad. He has played at prestigious musical gatherings such
               as the Taal Chakra Music Festival, International Jazz Day at
-              Antisocial, Covelong Surf Festival, Midlands Arts Centre
-              Birmingham, ACC World Music Festival in South Korea.
+              Antisocial, NCPA Mumbai, Covelong Surf Festival, Midlands Arts
+              Centre Birmingham, ACC World Music Festival in South Korea.
             </p>
             <p>
               His unique outlook on music has sparked many moments of musical
               explorations alongside stalwarts of the Indian Music scene namely;
-              Ustad Fazal Qureshi, Pandit Purbayan Chatterjee, Pandit Ravindra
-              Chary, Padmashree Soma Ghosh and his father, Pandit Yogesh Samsi,
-              to name but a few. And brought him to share stage with the
-              greatest Musicians in India, Gino Banks, Viveick Rajagopalan,
-              Harmeet Manseta, Sanjay Divecha, Joe Alvarez, Darshan Doshi, Manas
-              Kumar, Abhay Nayampally to name a few.
+              Ustad Fazal Qureshi, Pandit Ravindra Chary, Padmashree Soma Ghosh
+              and his father, Pandit Yogesh Samsi, to name but a few. And
+              brought him to share stage with the greatest Musicians in India,
+              Gino Banks, Viveick Rajagopalan, Harmeet Manseta, ChandaBala
+              Kalyan, Sanjay Divecha, Joe Alvarez, Darshan Doshi, Manas Kumar,
+              Abhay Nayampally to name a few.
             </p>
 
-            <a
-              className="text-xl lg:text-2xl"
-              href={`/api/download?url=${biodataPdf}`}
-              rel="noreferrer"
-              target="_blank"
-            >
-              <Button
-                type={ButtonTypes.Primary}
-                text="Download full Bio"
-                icon={<Download />}
-              />
-            </a>
+            <div className="flex gap-6">
+              <a
+                className="text-xl lg:text-2xl"
+                href={`/api/download?url=${biodataPdf}`}
+                rel="noreferrer"
+                target="_blank"
+              >
+                <Button
+                  type={ButtonTypes.Primary}
+                  text="Download full Bio"
+                  icon={<Download />}
+                />
+              </a>
+              <div className="text-xl lg:text-2xl">
+                <Button
+                  type={ButtonTypes.Secondary}
+                  text="Gallery"
+                  icon={<RightArrow />}
+                />
+              </div>
+            </div>
           </div>
         </div>
       </main>

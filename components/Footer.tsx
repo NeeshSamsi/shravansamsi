@@ -46,14 +46,6 @@ export default function Footer() {
               <Instagram />
             </div>
           </a>
-          <a
-            href="https://www.facebook.com/shravansamsiofficial/"
-            className="transition-all hover:text-light"
-          >
-            <div className="h-12 md:h-10 xl:h-14">
-              <Facebook />
-            </div>
-          </a>
         </div>
       </div>
 
