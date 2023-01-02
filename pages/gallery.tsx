@@ -114,6 +114,17 @@ const Gallery: NextPage<GalleryProps> = ({
           role="Image Gallery"
           className="grid grid-cols-2 gap-4 md:gap-8 lg:grid-cols-3 lg:gap-6 xl:gap-10 2xl:gap-20"
         >
+          {featuredImages.map((image) => {
+            const { id, dimensions, url, alt } = image;
+            return (
+              <GalleryImage
+                key={id}
+                dimensions={dimensions}
+                url={url}
+                alt={alt}
+              />
+            );
+          })}
           {gridImages.map((image) => {
             const { id, dimensions, url, alt } = image;
             return (
