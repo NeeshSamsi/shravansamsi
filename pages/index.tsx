@@ -14,6 +14,7 @@ import {
   Facebook,
 } from "../components/Icons";
 import HeadComponent from "../components/HeadComponent";
+import Footer from "../components/Footer";
 
 const Home: NextPage = () => {
   return (
@@ -95,6 +96,8 @@ const Home: NextPage = () => {
           </div>
         </div>
       </main>
+
+      <Footer />
     </>
   );
 };
