@@ -70,6 +70,7 @@ export default function Footer() {
       </div>
 
       <p className="m-8 text-center text-lg md:text-base xl:text-lg">
+        © All Rights Reserved Shravan Samsi {new Date().getFullYear()} |
         Designed & Developed by{" "}
         <a
           className="text-accent hover:underline"
