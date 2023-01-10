@@ -9,20 +9,28 @@ export default function Footer() {
         className="flex flex-col gap-12 py-8 px-4 sm:px-8 md:flex-row md:justify-between md:gap-0 md:px-12 lg:px-32 xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem]
     3xl:px-0"
       >
-        <div className="flex flex-col items-center gap-4 text-lg">
+        <div className="flex flex-col items-center gap-4 text-lg md:items-start">
           <h3 className="text-3xl font-bold lg:text-3xl xl:text-4xl">
             Shravan Samsi
           </h3>
-          <Button
-            type={ButtonTypes.Primary}
-            text="Catch me live"
-            icon={<RightArrow />}
-          />
-          <Button
-            type={ButtonTypes.Secondary}
-            text="Let's chat"
-            icon={<Chat />}
-          />
+          <Link href="/events">
+            <a>
+              <Button
+                type={ButtonTypes.Primary}
+                text="Catch me live"
+                icon={<RightArrow />}
+              />
+            </a>
+          </Link>
+          <Link href="/contact">
+            <a>
+              <Button
+                type={ButtonTypes.Secondary}
+                text="Let's chat"
+                icon={<Chat />}
+              />
+            </a>
+          </Link>
         </div>
 
         <div>
