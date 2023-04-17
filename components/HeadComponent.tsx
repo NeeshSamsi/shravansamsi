@@ -5,6 +5,7 @@ interface HeadProps {
   description: string;
   imageUrl: string;
   path: string;
+  children: React.ReactNode;
 }
 
 export default function HeadComponent({
@@ -12,6 +13,7 @@ export default function HeadComponent({
   description,
   imageUrl,
   path,
+  children,
 }: HeadProps) {
   const domain = "shravansamsi.com";
 
@@ -32,6 +34,8 @@ export default function HeadComponent({
       <meta name="twitter:title" content={title} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={imageUrl} />
+
+      {children}
     </Head>
   );
 }

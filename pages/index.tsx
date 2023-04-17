@@ -24,7 +24,12 @@ const Home: NextPage = () => {
         description="Official website of Shravan Samsi. Find out more and get in touch."
         imageUrl="/hero.png"
         path=""
-      />
+      >
+        <meta
+          name="google-site-verification"
+          content="0n9XVs38EFrQL1r15cV2WNYVgBcxfbByXbKVuoqUVPg"
+        />
+      </HeadComponent>
 
       <Navbar />
 
