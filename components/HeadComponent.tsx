@@ -5,7 +5,7 @@ interface HeadProps {
   description: string;
   imageUrl: string;
   path: string;
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 
 export default function HeadComponent({
