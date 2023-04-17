@@ -1,22 +1,28 @@
-import * as fs from "fs";
+import { glob } from "glob";
 import { NextApiRequest, NextApiResponse } from "next";
 
 const BASE_URL = "https://shravansamsi.com";
 
-const staticPaths = fs
-  .readdirSync("pages")
-  .filter((staticPage) => {
-    return !["api", "_app.tsx", "_document.tsx", "404.tsx"].includes(
-      staticPage
-    );
-  })
-  .map((staticPagePath) => {
-    return `${BASE_URL}/${staticPagePath
-      .replace(".tsx", "")
-      .replace("index", "")}`;
-  });
+const pagesDir = "pages/**/*.tsx";
 
-export default function handler(req: NextApiRequest, res: NextApiResponse) {
+export default async function handler(
+  req: NextApiRequest,
+  res: NextApiResponse
+) {
+  let staticPaths = await glob.sync(pagesDir);
+
+  staticPaths = staticPaths
+    .map((path) => path.replace("pages\\", ""))
+    .filter((path) => !path.startsWith("["))
+    .filter((path) => !path.startsWith("_"))
+    .filter((path) => !path.startsWith("404"))
+    .map((path) => path.replace(".tsx", "").replace("index", ""))
+    .map((staticPagePath) => {
+      return `${BASE_URL}/${staticPagePath}`;
+    });
+
+  console.log(staticPaths);
+
   res.statusCode = 200;
   res.setHeader("Content-Type", "text/xml");
 
