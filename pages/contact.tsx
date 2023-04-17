@@ -127,7 +127,7 @@ const Contact: NextPage = () => {
                   onChange={setSelectedTopic}
                   name="topic"
                 >
-                  <Listbox.Button className="ietms-center flex justify-between rounded border border-light py-3 px-4 text-left text-base font-extralight text-light hover:bg-dark-off md:text-lg xl:text-2xl">
+                  <Listbox.Button className="flex items-center justify-between rounded border border-light py-3 px-4 text-left text-base font-extralight text-light hover:bg-dark-off md:text-lg xl:text-2xl">
                     <span>{selectedTopic.name}</span>
                     <span className="w-8 rotate-90 transition-all ui-open:-rotate-90 xl:w-10">
                       <Caret />
