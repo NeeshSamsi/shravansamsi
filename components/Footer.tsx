@@ -42,6 +42,7 @@ export default function Footer() {
             <a
               href="https://youtube.com/shravansamsi"
               className="transition-all hover:text-light"
+              aria-label="Shravan's YouTube Link"
             >
               <div className="h-12 md:h-10 xl:h-14">
                 <YouTube />
@@ -50,6 +51,7 @@ export default function Footer() {
             <a
               href="https://www.instagram.com/shravansamsi/"
               className="transition-all hover:text-light"
+              aria-label="Shravan's Instagram Link"
             >
               <div className="h-12 md:h-10 xl:h-14">
                 <Instagram />

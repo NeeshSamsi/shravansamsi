@@ -99,6 +99,7 @@ const Home: NextPage = () => {
               alt="Shravan Samsi"
               layout="fill"
               objectFit="contain"
+              priority
             />
           </div>
         </div>

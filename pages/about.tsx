@@ -34,6 +34,7 @@ const About: NextPage<{ biodataPdf: string }> = ({ biodataPdf }) => {
                 alt="Shravan Samsi"
                 layout="fill"
                 objectFit="contain"
+                priority
               />
             </div>
           </div>

@@ -149,6 +149,7 @@ export default function Navbar() {
               className="transition-all hover:text-accent"
               rel="noreferrer"
               target="_blank"
+              aria-label="Shravan's YouTube Link"
             >
               <div className="h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-16">
                 <YouTube />
@@ -159,6 +160,7 @@ export default function Navbar() {
               className="transition-all hover:text-accent"
               rel="noreferrer"
               target="_blank"
+              aria-label="Shravan's Instagram Link"
             >
               <div className="h-12 md:h-14 lg:h-12 xl:h-14 2xl:h-16">
                 <Instagram />
