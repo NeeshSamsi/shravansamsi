@@ -37,6 +37,9 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
         })
         .join("")}
     </urlset>`;
-
-  res.end(xml);
+  try {
+    res.end(xml);
+  } catch (error) {
+    res.send(error);
+  }
 }
