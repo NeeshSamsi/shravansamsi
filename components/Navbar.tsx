@@ -71,7 +71,11 @@ export default function Navbar() {
       </div>
 
       {/* Hamburger Menu */}
-      <button onClick={handleHamburger} className="z-10 lg:hidden">
+      <button
+        onClick={handleHamburger}
+        className="z-10 lg:hidden"
+        aria-label="Hamburger Button to Open Navigation Menu"
+      >
         <div
           className={`tham ${
             isHamburgerOpen && "tham-active"
