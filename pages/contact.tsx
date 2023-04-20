@@ -90,6 +90,7 @@ const Contact: NextPage = () => {
                   id="name"
                   name="name"
                   placeholder="Enter your name here"
+                  required
                   value={name}
                   onChange={(e) => {
                     setName(e.target.value);
@@ -110,6 +111,7 @@ const Contact: NextPage = () => {
                   id="email"
                   name="email"
                   placeholder="Enter your email address"
+                  required
                   value={email}
                   onChange={(e) => {
                     setEmail(e.target.value);
@@ -160,6 +162,7 @@ const Contact: NextPage = () => {
                   id="message"
                   name="message"
                   placeholder="Enter your message here ..."
+                  required
                   value={message}
                   onChange={(e) => {
                     setMessage(e.target.value);
