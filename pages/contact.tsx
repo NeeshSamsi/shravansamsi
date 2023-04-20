@@ -49,6 +49,7 @@ const Contact: NextPage = () => {
         subject: `Contact Form submission - ${name} - ${selectedTopic.name}`,
         from: email,
       },
+      "h-captcha-response": "703cadc8-1f28-4576-aa11-db1111d0d512",
     });
 
     setSent(true);
