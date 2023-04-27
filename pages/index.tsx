@@ -22,7 +22,7 @@ const Home: NextPage = () => {
       <HeadComponent
         title="Home - Shravan Samsi"
         description="Official website of Shravan Samsi. Find out more and get in touch."
-        imageUrl="/hero.png"
+        imageUrl="/hero.webp"
         path=""
       >
         <meta
