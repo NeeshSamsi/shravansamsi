@@ -29,7 +29,7 @@ const Event = ({ event }: EventComponentType) => {
           objectFit="contain"
         />
       </div>
-      <div className="flex flex-col justify-between gap-4 sm:gap-0">
+      <div className="flex flex-col justify-between gap-4">
         <div className="flex flex-col gap-2 lg:gap-4">
           <h4 className="text-xl font-semibold sm:text-2xl lg:text-3xl 2xl:text-4xl 3xl:text-5xl">
             {name}
