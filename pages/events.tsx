@@ -64,7 +64,9 @@ export async function getServerSideProps() {
       date: event.data.date,
       time: event.data.time,
       paid: event.data.paid,
-      ticket_link: event.data.ticket_link.url,
+      ticket_link: event.data.ticket_link.url
+        ? event.data.ticket_link.url
+        : null,
       poster: {
         url: event.data.poster.url,
         alt: event.data.poster.alt,
