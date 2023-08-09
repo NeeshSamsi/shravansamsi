@@ -61,24 +61,18 @@ const Event = ({ event }: EventComponentType) => {
             </p>
           </div>
         </div>
-        <a
-          href={ticket_link}
-          className="text-xs sm:text-lg lg:text-xl 2xl:text-xl 3xl:text-2xl"
-        >
-          {paid ? (
+        {ticket_link && (
+          <a
+            href={ticket_link}
+            className="text-xs sm:text-lg lg:text-xl 2xl:text-xl 3xl:text-2xl"
+          >
             <Button
               type={ButtonTypes.Secondary}
-              text="Book tickets"
+              text={paid ? "Book tickets" : "Learn more"}
               icon={<RightArrow />}
             />
-          ) : (
-            <Button
-              type={ButtonTypes.Secondary}
-              text="Learn more"
-              icon={<RightArrow />}
-            />
-          )}
-        </a>
+          </a>
+        )}
       </div>
     </div>
   );
