@@ -84,7 +84,7 @@ export default function Footer() {
         Designed & Developed by{" "}
         <a
           className="text-accent hover:underline"
-          href="https://instagram.com/neeshsamsi"
+          href="https://neeshsamsi.com"
         >
           Avaneesh Samsi
         </a>
