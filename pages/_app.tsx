@@ -11,7 +11,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       </Head>
       <Script
         strategy="lazyOnload"
-        src="https://neesh-umami.vercel.app/script.js"
+        src="https://umami.neeshsamsi.com/script.js"
         data-website-id="69e401e2-1f13-4a8a-8f4f-c2ba6d75bc3e"
       />
       <Component {...pageProps} />
