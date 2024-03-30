@@ -12,7 +12,7 @@ export default function MyApp({ Component, pageProps }: AppProps) {
       <Script
         strategy="lazyOnload"
         src="https://umami.neeshsamsi.com/script.js"
-        data-website-id="c6000030-43f6-4e74-9f49-5ed4408b561f"
+        data-website-id="7be41c8e-6895-4385-acf2-95086f17a1e0"
       />
       <Component {...pageProps} />
     </>
