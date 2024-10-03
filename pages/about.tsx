@@ -41,31 +41,13 @@ const About: NextPage<{ biodataPdf: string }> = ({ biodataPdf }) => {
 
           <div className="flex w-full flex-col items-center gap-6 text-center text-lg font-light leading-relaxed sm:text-xl md:w-1/2 md:items-start md:text-left md:text-xl lg:text-2xl xl:gap-10 xl:text-3xl ">
             <p>
-              Shravan has brought about a perfect balance between his roots in
-              Indian and passion for Western Rhythm, converging multiple schools
-              of thought and incorporating nuances and aesthetics of repertoire
-              throughout his performance and production. He began his training
-              under tabla phenomenon, Pandit Yogesh Samsi and later from
-              globally renowned music director and percussionist Maestro Ranjit
-              Barot.
+              Shravan has brought about a perfect balance between his roots in Indian and passion for Western Rhythm, converging multiple schools of thought and incorporating nuances and aesthetics of repertoire throughout his performance and production. He is training under tabla phenomenon, Pandit Yogesh Samsi, Maestro Ranjit Barot and Maestro Trilok Gurtu.
             </p>
             <p>
-              His captivating stage presence and command over his instrument in
-              his performances has led him to perform at venues all across India
-              and abroad. He has played at prestigious musical gatherings such
-              as the Taal Chakra Music Festival, International Jazz Day at
-              Antisocial, NCPA Mumbai, Covelong Surf Festival, Midlands Arts
-              Centre Birmingham, ACC World Music Festival in South Korea.
+              His unique outlook and love for music has sparked many experiences of musical explorations and brought him to share the stage with stalwarts such as Maestro Trilok Gurtu, Maestro Ranjit Barot,  Sanjay Divecha, Purbayan Chatterjee, Louis Banks, Viveick Rajagopalan, Ustad Fazal Qureshi, Pandit Ravindra Chary and his father, Pandit Yogesh Samsi, to name but a few.
             </p>
             <p>
-              His unique outlook on music has sparked many moments of musical
-              explorations alongside stalwarts of the Indian Music scene namely;
-              Ustad Fazal Qureshi, Pandit Ravindra Chary, Padmashree Soma Ghosh
-              and his father, Pandit Yogesh Samsi, to name but a few. And
-              brought him to share stage with the greatest Musicians in India,
-              Gino Banks, Viveick Rajagopalan, Harmeet Manseta, ChandaBala
-              Kalyan, Sanjay Divecha, Joe Alvarez, Darshan Doshi, Manas Kumar,
-              Abhay Nayampally to name a few.
+              His captivating stage presence and command over his instrument has led him to perform at prestigious musical gatherings all over india and abroad such as Drum Festivals, International Jazz Day, Piano Day, NCPA and NMACC Mumbai, Midlands Arts Centre Birmingham, ACC World Music Festival in South Korea
             </p>
 
             <div className="flex gap-6">
