@@ -20,7 +20,7 @@ const About: NextPage<{ biodataPdf: string }> = ({ biodataPdf }) => {
 
       <Navbar />
 
-      <main className="px-4 pt-16 pb-24 sm:px-8 md:px-12 lg:px-32 xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem] 3xl:px-0">
+      <main className="px-4 pb-24 pt-16 sm:px-8 md:px-12 lg:px-32 xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem] 3xl:px-0">
         <div className="flex flex-col gap-10 md:flex-row md:justify-between md:gap-0">
           <div className="flex w-full flex-col gap-12 md:w-2/5 xl:gap-16">
             <h1 className="font-smallcaps rounded-lg bg-accent py-8 text-center font-serif text-6xl font-bold text-dark xl:text-9xl">
@@ -41,17 +41,33 @@ const About: NextPage<{ biodataPdf: string }> = ({ biodataPdf }) => {
 
           <div className="flex w-full flex-col items-center gap-6 text-center text-lg font-light leading-relaxed sm:text-xl md:w-1/2 md:items-start md:text-left md:text-xl lg:text-2xl xl:gap-10 xl:text-3xl ">
             <p>
-              Shravan has brought about a perfect balance between his roots in Indian and passion for Western Rhythm, converging multiple schools of thought and incorporating nuances and aesthetics of repertoire throughout his performance and production. He is training under tabla phenomenon, Pandit Yogesh Samsi, Maestro Ranjit Barot and Maestro Trilok Gurtu.
+              Shravan has brought about a perfect balance between his roots in
+              Indian and passion for Western Rhythm, converging multiple schools
+              of thought and incorporating nuances and aesthetics of repertoire
+              throughout his performance and production. He is training under
+              tabla phenomenon, Pandit Yogesh Samsi, Maestro Ranjit Barot and
+              Maestro Trilok Gurtu.
             </p>
             <p>
-              His unique outlook and love for music has sparked many experiences of musical explorations and brought him to share the stage with stalwarts such as Maestro Trilok Gurtu, Maestro Ranjit Barot,  Sanjay Divecha, Purbayan Chatterjee, Louis Banks, Viveick Rajagopalan, Ustad Fazal Qureshi, Pandit Ravindra Chary and his father, Pandit Yogesh Samsi, to name but a few.
+              His unique outlook and love for music has sparked many experiences
+              of musical explorations and brought him to share the stage with
+              stalwarts such as Maestro Anantasubramani Hariharan, Maestro
+              Trilok Gurtu, Maestro Ranjit Barot, Sanjay Divecha, Purbayan
+              Chatterjee, Ustad Fazal Qureshi, Maestro Louis Banks, Viveick
+              Rajagopalan, Pandit Ravindra Chary and his father, Pandit Yogesh
+              Samsi, to name but a few.
             </p>
             <p>
-              His captivating stage presence and command over his instrument has led him to perform at prestigious musical gatherings all over india and abroad such as Drum Festivals, International Jazz Day, Piano Day, NCPA and NMACC Mumbai, Midlands Arts Centre Birmingham, ACC World Music Festival in South Korea
+              His captivating stage presence and command over his instrument has
+              led him to perform at prestigious musical gatherings all over
+              india and abroad such as the Midlands Arts Centre Birmingham, ACC
+              World Music Festival in South Korea, international Drum Festivals,
+              International Jazz Day, Mahindra Blues Festival, NCPA and NMACC
+              Mumbai.
             </p>
 
             <div className="flex gap-6">
-              <a
+              {/* <a
                 className="text-xl lg:text-2xl"
                 href={`/api/download?url=${biodataPdf}`}
                 rel="noreferrer"
@@ -62,7 +78,7 @@ const About: NextPage<{ biodataPdf: string }> = ({ biodataPdf }) => {
                   text="Download full Bio"
                   icon={<Download />}
                 />
-              </a>
+              </a> */}
               <div className="text-xl lg:text-2xl">
                 <Button
                   type={ButtonTypes.Secondary}
