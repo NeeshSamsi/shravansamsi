@@ -8,8 +8,8 @@ module.exports = {
     extend: {
       colors: {
         light: "#FFF4DC",
-        dark: "#22201C",
-        "dark-off": "#2E2C26",
+        dark: "#111111",
+        "dark-off": "#111111",
         accent: "#FFBA25",
       },
       fontFamily: {
@@ -22,5 +22,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require("tailwind-hamburgers"), require('@headlessui/tailwindcss')],
+  plugins: [require("tailwind-hamburgers"), require("@headlessui/tailwindcss")],
 };
