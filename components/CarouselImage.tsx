@@ -22,11 +22,10 @@ export default function CarouselImage({
     <>
       <div onClick={() => setIsOpen(true)}>
         <Image
-          className="pointer-events-none -z-10 h-full w-full"
+          className="pointer-events-none -z-10 h-full w-full object-contain"
           src={url}
           alt={alt}
-          layout="fill"
-          objectFit="contain"
+          fill
         />
       </div>
       <div className="absolute inset-0 z-10 hidden h-full w-full cursor-grab bg-dark/70 p-6 text-light opacity-0 transition-all hover:opacity-100 lg:block">

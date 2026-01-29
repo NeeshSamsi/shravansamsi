@@ -14,22 +14,18 @@ export default function Footer() {
             Shravan Samsi
           </h3>
           <Link href="/events">
-            <a>
-              <Button
-                type={ButtonTypes.Primary}
-                text="Catch me live"
-                icon={<RightArrow />}
-              />
-            </a>
+            <Button
+              type={ButtonTypes.Primary}
+              text="Catch me live"
+              icon={<RightArrow />}
+            />
           </Link>
           <Link href="/contact">
-            <a>
-              <Button
-                type={ButtonTypes.Secondary}
-                text="Let's chat"
-                icon={<Chat />}
-              />
-            </a>
+            <Button
+              type={ButtonTypes.Secondary}
+              text="Let's chat"
+              icon={<Chat />}
+            />
           </Link>
         </div>
 
@@ -61,20 +57,32 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-6 text-center text-xl md:text-lg xl:text-2xl ">
-          <Link href="/">
-            <a className="block transition-all hover:text-accent">Home</a>
+          <Link href="/" className="block transition-all hover:text-accent">
+            Home
           </Link>
-          <Link href="/about">
-            <a className="block transition-all hover:text-accent">About</a>
+          <Link
+            href="/about"
+            className="block transition-all hover:text-accent"
+          >
+            About
           </Link>
-          <Link href="/events">
-            <a className="block transition-all hover:text-accent">Events</a>
+          <Link
+            href="/events"
+            className="block transition-all hover:text-accent"
+          >
+            Events
           </Link>
-          <Link href="/gallery">
-            <a className="block transition-all hover:text-accent">Gallery</a>
+          <Link
+            href="/gallery"
+            className="block transition-all hover:text-accent"
+          >
+            Gallery
           </Link>
-          <Link href="/contact">
-            <a className="block transition-all hover:text-accent">Contact</a>
+          <Link
+            href="/contact"
+            className="block transition-all hover:text-accent"
+          >
+            Contact
           </Link>
         </div>
       </div>

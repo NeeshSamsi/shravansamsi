@@ -4,7 +4,7 @@ import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import Event from "../components/Event";
 import HeadComponent from "../components/HeadComponent";
-import client, { EventType } from "../lib/prismicio";
+import { createClient, EventType } from "../lib/prismicio";
 
 interface EventsProps {
   events: EventType[];
@@ -43,44 +43,49 @@ const Events: NextPage<EventsProps> = ({ events }) => {
   );
 };
 
-export async function getServerSideProps() {
-  const data = await client.getAllByType("events", {
-    orderings: [{ field: "my.events.date", direction: "asc" }],
-  });
+export async function getServerSideProps({ previewData, req }: any) {
+  const client = createClient({ previewData, req });
+  
+  try {
+    const data = await client.getAllByType("events", {
+      orderings: [{ field: "my.events.date", direction: "asc" }],
+    });
 
-  const formattedData: EventType[] = data.map((event) => ({
-    id: event.id,
-    type: event.type,
-    href: event.href,
-    tags: event.tags,
-    first_publication_date: event.first_publication_date,
-    last_publication_date: event.last_publication_date,
-    data: {
-      name: event.data.name,
-      location: {
-        name: event.data.location[0].location_name,
-        url: event.data.location[0].location_link,
+    const formattedData: EventType[] = data.map((event) => ({
+      id: event.id,
+      type: event.type,
+      href: event.href,
+      tags: event.tags,
+      first_publication_date: event.first_publication_date,
+      last_publication_date: event.last_publication_date,
+      data: {
+        name: event.data.name,
+        location: {
+          name: event.data.location?.[0]?.location_name || "",
+          url: event.data.location?.[0]?.location_link || "",
+        },
+        date: event.data.date,
+        time: event.data.time,
+        paid: event.data.paid,
+        ticket_link: event.data.ticket_link?.url || null,
+        poster: {
+          url: event.data.poster?.url || "",
+          alt: event.data.poster?.alt || "",
+        },
       },
-      date: event.data.date,
-      time: event.data.time,
-      paid: event.data.paid,
-      ticket_link: event.data.ticket_link.url
-        ? event.data.ticket_link.url
-        : null,
-      poster: {
-        url: event.data.poster.url,
-        alt: event.data.poster.alt,
-      },
-    },
-  }));
+    }));
 
-  const events = formattedData.filter(
-    (event) =>
-      new Date(event.data.date).toDateString() === new Date().toDateString() ||
-      new Date(event.data.date) > new Date()
-  );
+    const events = formattedData.filter(
+      (event) =>
+        new Date(event.data.date).toDateString() === new Date().toDateString() ||
+        new Date(event.data.date) > new Date()
+    );
 
-  return { props: { events } };
+    return { props: { events } };
+  } catch (error) {
+    console.error("Failed to fetch events:", error);
+    return { props: { events: [] } };
+  }
 }
 
 export default Events;

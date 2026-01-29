@@ -50,11 +50,10 @@ export default function ImageDialog({
         </div>
         <div className="relative h-full w-full">
           <Image
-            className="-z-10 h-full w-full bg-dark"
+            className="-z-10 h-full w-full bg-dark object-contain"
             src={url}
             alt={alt}
-            layout="fill"
-            objectFit="contain"
+            fill
           />
         </div>
       </Dialog.Panel>

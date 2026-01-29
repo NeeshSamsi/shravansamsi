@@ -17,56 +17,26 @@ export default function Navbar() {
     <nav className="sticky top-0 left-0 right-0 z-40 flex items-center justify-between bg-dark py-8 px-4 sm:px-8 md:px-12 lg:px-32 xl:px-44 2xl:px-56 3xl:mx-auto 3xl:max-w-[144rem] 3xl:px-0">
       <h2 className="z-10 text-3xl font-semibold lg:text-2xl xl:text-3xl 2xl:text-4xl">
         <Link href="/">
-          <a>Shravan Samsi</a>
+          Shravan Samsi
         </Link>
       </h2>
 
       {/* Desktop Nav Links - hidden, flex from lg + */}
       <div className="hidden gap-4 font-light lg:flex lg:gap-6 lg:text-base xl:text-lg 2xl:gap-8 2xl:text-2xl">
         <Link href="/">
-          <a
-            className={`transition-all hover:text-accent ${
-              currentRoute === "/" && "font-medium text-accent"
-            }`}
-          >
-            Home
-          </a>
+          Home
         </Link>
         <Link href="/about">
-          <a
-            className={`transition-all hover:text-accent ${
-              currentRoute === "/about" && "font-medium text-accent"
-            }`}
-          >
-            About
-          </a>
+          About
         </Link>
         <Link href="/events">
-          <a
-            className={`transition-all hover:text-accent ${
-              currentRoute === "/events" && "font-medium text-accent"
-            }`}
-          >
-            Events
-          </a>
+          Events
         </Link>
         <Link href="/gallery">
-          <a
-            className={`transition-all hover:text-accent ${
-              currentRoute === "/gallery" && "font-medium text-accent"
-            }`}
-          >
-            Gallery
-          </a>
+          Gallery
         </Link>
         <Link href="/contact">
-          <a
-            className={`transition-all hover:text-accent ${
-              currentRoute === "/contact" && "font-medium text-accent"
-            }`}
-          >
-            Contact
-          </a>
+          Contact
         </Link>
       </div>
 
@@ -95,50 +65,45 @@ export default function Navbar() {
       >
         {/* Mobile Nav Links */}
         <div className="flex flex-col gap-6">
-          <Link href="/">
-            <a
-              className={`block transition-all ${
-                currentRoute === "/" && "font-medium text-accent"
-              }`}
-            >
-              Home
-            </a>
+          <Link
+            href="/"
+            className={`block transition-all ${
+              currentRoute === "/" && "font-medium text-accent"
+            }`}
+          >
+            Home
           </Link>
-          <Link href="/about">
-            <a
-              className={`block transition-all ${
-                currentRoute === "/about" && "font-medium text-accent"
-              }`}
-            >
-              About
-            </a>
+          <Link
+            href="/about"
+            className={`block transition-all ${
+              currentRoute === "/about" && "font-medium text-accent"
+            }`}
+          >
+            About
           </Link>
-          <Link href="/events">
-            <a
-              className={`block transition-all ${
-                currentRoute === "/events" && "font-medium text-accent"
-              }`}
-            >
-              Events
-            </a>
+          <Link
+            href="/events"
+            className={`block transition-all ${
+              currentRoute === "/events" && "font-medium text-accent"
+            }`}
+          >
+            Events
           </Link>
-          <Link href="/gallery">
-            <a
-              className={`block transition-all ${
-                currentRoute === "/gallery" && "font-medium text-accent"
-              }`}
-            >
-              Gallery
-            </a>
+          <Link
+            href="/gallery"
+            className={`block transition-all ${
+              currentRoute === "/gallery" && "font-medium text-accent"
+            }`}
+          >
+            Gallery
           </Link>
-          <Link href="/contact">
-            <a
-              className={`block transition-all ${
-                currentRoute === "/contact" && "font-medium text-accent"
-              }`}
-            >
-              Contact
-            </a>
+          <Link
+            href="/contact"
+            className={`block transition-all ${
+              currentRoute === "/contact" && "font-medium text-accent"
+            }`}
+          >
+            Contact
           </Link>
         </div>
         {/* Mobile Socials */}

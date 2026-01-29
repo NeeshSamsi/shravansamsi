@@ -22,11 +22,10 @@ export default function GalleryImage({
     <div className="relative aspect-square border border-light">
       <div onClick={() => setIsOpen(true)}>
         <Image
-          className="pointer-events-none -z-10 h-full w-full"
+          className="pointer-events-none -z-10 h-full w-full object-contain"
           src={url}
           alt={alt}
-          layout="fill"
-          objectFit="contain"
+          fill
         />
       </div>
 

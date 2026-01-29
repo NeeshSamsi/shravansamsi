@@ -194,11 +194,10 @@ const Contact: NextPage = () => {
           <div className="hidden w-2/5 xl:block 2xl:w-1/2">
             <div className="relative -z-10 aspect-square w-full rounded-full bg-light">
               <Image
-                className="h-full w-full"
+                className="h-full w-full object-contain"
                 src="/contact.webp"
                 alt="Shravan Samsi"
-                layout="fill"
-                objectFit="contain"
+                fill
                 priority
               />
             </div>

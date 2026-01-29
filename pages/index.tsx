@@ -47,22 +47,18 @@ const Home: NextPage = () => {
 
             <div className="mb-6 flex items-center justify-center gap-4 text-sm sm:text-base md:gap-6 lg:justify-start lg:gap-2 lg:text-lg xl:gap-6 2xl:gap-10 2xl:text-2xl 3xl:text-3xl">
               <Link href="/events">
-                <a>
-                  <Button
-                    type={ButtonTypes.Primary}
-                    text="Catch me live"
-                    icon={<RightArrow />}
-                  />
-                </a>
+                <Button
+                  type={ButtonTypes.Primary}
+                  text="Catch me live"
+                  icon={<RightArrow />}
+                />
               </Link>
               <Link href="/contact">
-                <a>
-                  <Button
-                    type={ButtonTypes.Secondary}
-                    text="Let's chat"
-                    icon={<Chat />}
-                  />
-                </a>
+                <Button
+                  type={ButtonTypes.Secondary}
+                  text="Let's chat"
+                  icon={<Chat />}
+                />
               </Link>
             </div>
 
@@ -94,11 +90,10 @@ const Home: NextPage = () => {
 
           <div className="3xl:2/5 relative -z-10 aspect-square w-full rounded-full bg-light sm:w-3/4 lg:block lg:w-1/2 2xl:w-1/2">
             <Image
-              className="h-full w-full"
+              className="h-full w-full object-contain"
               src="/hero.webp"
               alt="Shravan Samsi"
-              layout="fill"
-              objectFit="contain"
+              fill
               priority
             />
           </div>
