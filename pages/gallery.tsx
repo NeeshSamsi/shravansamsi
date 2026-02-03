@@ -2,7 +2,7 @@ import { NextPage } from "next";
 import { useRef } from "react";
 
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Autoplay } from "swiper";
+import { Navigation, Autoplay } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
 
@@ -12,7 +12,7 @@ import GalleryImage from "../components/GalleryImage";
 import CircleCaret from "../components/Icons/CircleCaret";
 import Navbar from "../components/Navbar";
 import HeadComponent from "../components/HeadComponent";
-import client, { GalleryImageType, YouTubeVideoType } from "../lib/prismicio";
+import { createClient, GalleryImageType, YouTubeVideoType } from "../lib/prismicio";
 
 interface GalleryProps {
   featuredImages: GalleryImageType[];
@@ -144,36 +144,43 @@ const Gallery: NextPage<GalleryProps> = ({
   );
 };
 
-export async function getServerSideProps() {
-  const images = await client.getAllByType("gallery_images", {
-    orderings: [{ field: "document.last_publication_date" }],
-  });
+export async function getServerSideProps({ previewData, req }: any) {
+  const client = createClient({ previewData, req });
 
-  const galleryImages = images.map((image) => {
-    const galleryImage: GalleryImageType = {
-      id: image.id,
-      featured: image.data.featured,
-      dimensions: `${image.data.image.dimensions.width} × ${image.data.image.dimensions.height}`,
-      url: image.data.image.url,
-      alt: image.data.image.alt,
-    };
+  try {
+    const images = await client.getAllByType("gallery_images", {
+      orderings: [{ field: "document.last_publication_date" }],
+    });
 
-    return galleryImage;
-  });
+    const galleryImages = images.map((image) => {
+      const galleryImage: GalleryImageType = {
+        id: image.id,
+        featured: image.data.featured,
+        dimensions: image.data.image && image.data.image.dimensions ? `${image.data.image.dimensions.width} × ${image.data.image.dimensions.height}` : "",
+        url: image.data.image?.url || "",
+        alt: image.data.image?.alt || "",
+      };
 
-  const featuredImages = galleryImages.filter((image) => image.featured);
-  const gridImages = galleryImages.filter((image) => !image.featured);
+      return galleryImage;
+    });
 
-  const links = await client.getAllByType("youtube_videos");
+    const featuredImages = galleryImages.filter((image) => image.featured);
+    const gridImages = galleryImages.filter((image) => !image.featured);
 
-  const youtubeVideos: YouTubeVideoType[] = links.map((link) => {
-    return {
-      id: link.id,
-      url: link.data.youtube_embed_link.url,
-    };
-  });
+    const links = await client.getAllByType("youtube_videos");
 
-  return { props: { featuredImages, gridImages, youtubeVideos } };
+    const youtubeVideos: YouTubeVideoType[] = links.map((link) => {
+      return {
+        id: link.id,
+        url: link.data.youtube_embed_link?.url || "",
+      };
+    });
+
+    return { props: { featuredImages, gridImages, youtubeVideos } };
+  } catch (error) {
+    console.error("Failed to fetch gallery data:", error);
+    return { props: { featuredImages: [], gridImages: [], youtubeVideos: [] } };
+  }
 }
 
 export default Gallery;

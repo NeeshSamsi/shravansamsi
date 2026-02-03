@@ -29,26 +29,17 @@ export default async function handler(
   //@ts-ignore
   const picRes = await fetch(url);
 
-  const imageBlob = await picRes.blob();
-
-  const chunks: any[] = [];
-
-  // @ts-ignore
-  for (const chunk of imageBlob.stream().read()) {
-    chunks.push(chunk);
-  }
+  const arrayBuffer = await picRes.arrayBuffer();
+  const buffer = Buffer.from(arrayBuffer);
 
   res.setHeader(
     "content-type",
     picRes.headers.get("content-type") || `image/${fileExtension}`
   );
-  res.setHeader(
-    "content-length",
-    picRes.headers.get("content-length") || chunks.length
-  );
+  res.setHeader("content-length", buffer.length);
   res.setHeader("Content-Disposition", `attachment; filename=${fileName}`);
 
-  res.write(Uint8Array.from(chunks));
+  res.write(buffer);
 
   return res.status(200).end();
 }

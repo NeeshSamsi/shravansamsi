@@ -6,7 +6,7 @@ import HeadComponent from "../components/HeadComponent";
 import { RightArrow } from "../components/Icons";
 import Download from "../components/Icons/Download";
 import Navbar from "../components/Navbar";
-import client from "../lib/prismicio";
+import { createClient } from "../lib/prismicio";
 
 const About: NextPage<{ biodataPdf: string }> = ({ biodataPdf }) => {
   return (
@@ -29,11 +29,10 @@ const About: NextPage<{ biodataPdf: string }> = ({ biodataPdf }) => {
 
             <div className="relative -z-10 aspect-square w-full rounded-full bg-light lg:block">
               <Image
-                className="h-full w-full"
+                className="h-full w-full object-contain"
                 src="/about.webp"
                 alt="Shravan Samsi"
-                layout="fill"
-                objectFit="contain"
+                fill
                 priority
               />
             </div>
@@ -96,10 +95,16 @@ const About: NextPage<{ biodataPdf: string }> = ({ biodataPdf }) => {
   );
 };
 
-export async function getStaticProps() {
-  const biodataPdf = await client.getAllByType("biodata_pdf");
-
-  return { props: { biodataPdf: biodataPdf[0].data.pdf.url } };
+export async function getStaticProps({ previewData }: any) {
+  const client = createClient({ previewData });
+  try {
+    const biodataPdf = await client.getAllByType("biodata_pdf");
+    const pdfUrl = biodataPdf[0]?.data?.pdf?.url || "";
+    return { props: { biodataPdf: pdfUrl } };
+  } catch (error) {
+    console.error("Failed to fetch biodata_pdf:", error);
+    return { props: { biodataPdf: "" } };
+  }
 }
 
 export default About;

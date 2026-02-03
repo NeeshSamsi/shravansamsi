@@ -1,8 +1,36 @@
 import * as prismic from "@prismicio/client";
+import * as prismicNext from "@prismicio/next";
+import config from "../slicemachine.config.json";
 
-const repoName = "shravan";
-const endpoint = prismic.getEndpoint(repoName);
-const client = prismic.createClient(endpoint);
+export const repositoryName = config.repositoryName;
+
+interface CreateClientConfig extends prismicNext.CreateClientConfig {
+  previewData?: any;
+  req?: any;
+}
+
+export const createClient = (config: CreateClientConfig = {}) => {
+
+  const client = prismic.createClient(repositoryName, {
+    ...config,
+  });
+
+  // TODO: enableAutoPreviews was causing build failures during static generation. 
+  // Investigate proper usage with Next.js 16 and @prismicio/next v2.
+  if (config.req) {
+     try {
+       prismicNext.enableAutoPreviews({
+         client,
+         previewData: config.previewData,
+         req: config.req,
+       } as any);
+     } catch (e) {
+       console.error("enableAutoPreviews failed", e);
+     }
+  }
+
+  return client;
+};
 
 export interface EventType {
   id: string;
@@ -40,5 +68,3 @@ export interface YouTubeVideoType {
   id: string;
   url: string;
 }
-
-export default client;

@@ -1,9 +1,9 @@
-import { MouseEventHandler } from "react";
+import { MouseEventHandler, ReactNode } from "react";
 
 export interface ButtonProps {
   type: ButtonTypes;
   text: string;
-  icon?: JSX.Element;
+  icon?: ReactNode;
   clickHandler?: MouseEventHandler<HTMLButtonElement>;
   submitting?: boolean;
 }

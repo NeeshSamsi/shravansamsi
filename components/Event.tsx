@@ -22,11 +22,10 @@ const Event = ({ event }: EventComponentType) => {
     <div className="flex gap-4 md:gap-8">
       <div className="relative -z-10 aspect-square w-40 bg-light sm:w-56 lg:block lg:w-60 2xl:w-72 3xl:w-80">
         <Image
-          className="h-full w-full"
+          className="h-full w-full object-contain"
           src={poster.url}
           alt={poster.alt}
-          layout="fill"
-          objectFit="contain"
+          fill
         />
       </div>
       <div className="flex flex-col justify-between gap-4">
