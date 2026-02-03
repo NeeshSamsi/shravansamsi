@@ -64,13 +64,15 @@ const Gallery: NextPage<GalleryProps> = ({
               pauseOnMouseEnter: true,
             }}
             speed={600}
-            onInit={(swiper) => {
+            navigation={{
+              prevEl: prevRef.current,
+              nextEl: nextRef.current,
+            }}
+            onBeforeInit={(swiper) => {
               // @ts-ignore
               swiper.params.navigation.prevEl = prevRef.current;
               // @ts-ignore
               swiper.params.navigation.nextEl = nextRef.current;
-              swiper.navigation.init();
-              swiper.navigation.update();
             }}
           >
             {featuredImages.map((image) => {
