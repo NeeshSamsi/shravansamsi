@@ -15,11 +15,13 @@ const nextConfig = {
         source: "/masterclass",
         destination:
           "https://docs.google.com/forms/d/1HrEdw3xfPeAsJdvbqKY6SXlEMEEuVK9rGClsjdzRVnA/edit",
+        permanent: false,
       },
       {
         source: "/register",
         destination:
           "https://docs.google.com/forms/d/1HrEdw3xfPeAsJdvbqKY6SXlEMEEuVK9rGClsjdzRVnA/edit",
+        permanent: false,
       },
     ];
   },
